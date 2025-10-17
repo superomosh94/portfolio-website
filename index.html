@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Johnson - Full-Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e293b;
+            --accent-color: #f59e0b;
+            --text-color: #334155;
+            --text-light: #64748b;
+            --bg-color: #ffffff;
+            --bg-light: #f8fafc;
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        /* Dark Mode Variables */
+        .dark-mode {
+            --primary-color: #3b82f6;
+            --secondary-color: #f1f5f9;
+            --text-color: #e2e8f0;
+            --text-light: #94a3b8;
+            --bg-color: #0f172a;
+            --bg-light: #1e293b;
+            --border-color: #334155;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: var(--transition);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--secondary-color);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: var(--bg-color);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background: var(--secondary-color);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+            cursor: pointer;
+            font-size: 1.2rem;
+            margin-left: 1rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 70px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 4rem 0;
+            min-height: 80vh;
+        }
+
+        .hero-content {
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-placeholder {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 50%;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Skills Section */
+        .skills-section {
+            background: var(--bg-light);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: var(--bg-color);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: var(--bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 1.2rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .tech-tag {
+            background: var(--bg-light);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Services Section */
+        .services-section {
+            background: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg-color);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        .form-input,
+        .form-textarea {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* Blog Section */
+        .blog-section {
+            background: var(--bg-light);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--bg-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 180px;
+            background: var(--bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .blog-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .blog-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--secondary-color);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* Page Sections */
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: var(--bg-color);
+                width: 100%;
+                text-align: center;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+                padding: 2rem 0;
+                gap: 1.5rem;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .projects-grid,
+            .services-grid,
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-2 { margin-top: 2rem; }
+        .mb-2 { margin-bottom: 2rem; }
+        .mt-4 { margin-top: 4rem; }
+        .mb-4 { margin-bottom: 4rem; }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" data-page="home">Martin </a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="blog">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Page -->
+        <section id="home" class="page active">
+            <div class="container">
+                <section class="hero">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Hi, I'm <span class="highlight">Martin</span></h1>
+                        <p class="hero-subtitle">Full-Stack Web Developer</p>
+                        <p class="hero-description">I build secure, efficient web applications using modern technologies like Express, EJS, and bcrypt. Passionate about creating user-friendly digital experiences.</p>
+                        <div class="hero-buttons">
+                            <a href="#" class="btn btn-primary" data-page="projects">View My Work</a>
+                            <a href="#" class="btn btn-secondary" data-page="contact">Get In Touch</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="profile-placeholder">MO</div>
+                    </div>
+                </section>
+
+                <section class="section skills-section">
+                    <div class="container">
+                        <h2>Technologies I Use</h2>
+                        <div class="skills-container">
+                            <div class="skill-category">
+                                <h3>Frontend</h3>
+                                <div class="skills-grid">
+                                    <div class="skill-item">HTML5</div>
+                                    <div class="skill-item">CSS3</div>
+                                    <div class="skill-item">JavaScript</div>
+                                    <div class="skill-item">EJS</div>
+                                    <div class="skill-item">React</div>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h3>Backend</h3>
+                                <div class="skills-grid">
+                                    <div class="skill-item">Node.js</div>
+                                    <div class="skill-item">Express.js</div>
+                                    <div class="skill-item">MongoDB</div>
+                                    <div class="skill-item">PostgreSQL</div>
+                                    <div class="skill-item">bcrypt</div>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h3>Tools</h3>
+                                <div class="skills-grid">
+                                    <div class="skill-item">Git</div>
+                                    <div class="skill-item">Docker</div>
+                                    <div class="skill-item">AWS</div>
+                                    <div class="skill-item">Jest</div>
+                                    <div class="skill-item">Webpack</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="page">
+            <div class="container">
+                <section class="section">
+                    <h2>About Me</h2>
+                    <div class="hero">
+                        <div class="hero-content">
+                            <p>I'm a passionate full-stack web developer with over 5 years of experience building robust web applications. My expertise lies in creating secure, scalable solutions using modern technologies.</p>
+                            <p>I specialize in Express.js, EJS templating, and implementing secure authentication systems with bcrypt. I believe in writing clean, maintainable code and following best practices for web development.</p>
+                            <p>When I'm not coding, I enjoy contributing to open-source projects, writing technical blogs, and exploring new technologies in the web development ecosystem.</p>
+                            <div class="hero-buttons mt-4">
+                                <a href="#" class="btn btn-primary" data-page="contact">Hire Me</a>
+                                <a href="#" class="btn btn-secondary">Download CV</a>
+                            </div>
+                        </div>
+                        <div class="hero-image">
+                            <div class="profile-placeholder">About Me</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section skills-section">
+                    <div class="container">
+                        <h2>My Skills & Expertise</h2>
+                        <div class="skills-container">
+                            <div class="skill-category">
+                                <h3>Web Development</h3>
+                                <div class="skills-grid">
+                                    <div class="skill-item">Full-Stack Development</div>
+                                    <div class="skill-item">RESTful APIs</div>
+                                    <div class="skill-item">Database Design</div>
+                                    <div class="skill-item">Authentication Systems</div>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h3>Security</h3>
+                                <div class="skills-grid">
+                                    <div class="skill-item">Password Hashing</div>
+                                    <div class="skill-item">Data Encryption</div>
+                                    <div class="skill-item">SQL Injection Prevention</div>
+                                    <div class="skill-item">XSS Protection</div>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h3>DevOps</h3>
+                                <div class="skills-grid">
+                                    <div class="skill-item">CI/CD Pipelines</div>
+                                    <div class="skill-item">Containerization</div>
+                                    <div class="skill-item">Cloud Deployment</div>
+                                    <div class="skill-item">Performance Optimization</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!-- Projects Page -->
+        <section id="projects" class="page">
+            <div class="container">
+                <section class="section">
+                    <h2>My Projects</h2>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-image">E-Commerce Platform</div>
+                            <div class="project-content">
+                                <h3>E-Commerce Platform</h3>
+                                <p>Full-stack e-commerce solution with user authentication, payment processing, and admin dashboard.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Express</span>
+                                    <span class="tech-tag">EJS</span>
+                                    <span class="tech-tag">MongoDB</span>
+                                    <span class="tech-tag">bcrypt</span>
+                                    <span class="tech-tag">Stripe API</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="btn btn-primary">Live Demo</a>
+                                    <a href="#" class="btn btn-secondary">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">Task Management App</div>
+                            <div class="project-content">
+                                <h3>Task Management App</h3>
+                                <p>Collaborative task management application with real-time updates and team features.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Node.js</span>
+                                    <span class="tech-tag">Socket.io</span>
+                                    <span class="tech-tag">EJS</span>
+                                    <span class="tech-tag">PostgreSQL</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="btn btn-primary">Live Demo</a>
+                                    <a href="#" class="btn btn-secondary">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">Weather Dashboard</div>
+                            <div class="project-content">
+                                <h3>Weather Dashboard</h3>
+                                <p>Responsive weather application with location-based forecasts and interactive charts.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Express</span>
+                                    <span class="tech-tag">EJS</span>
+                                    <span class="tech-tag">Weather API</span>
+                                    <span class="tech-tag">Chart.js</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="btn btn-primary">Live Demo</a>
+                                    <a href="#" class="btn btn-secondary">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">Blog CMS</div>
+                            <div class="project-content">
+                                <h3>Blog CMS</h3>
+                                <p>Content management system for bloggers with markdown support and SEO optimization.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Express</span>
+                                    <span class="tech-tag">EJS</span>
+                                    <span class="tech-tag">MongoDB</span>
+                                    <span class="tech-tag">bcrypt</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="btn btn-primary">Live Demo</a>
+                                    <a href="#" class="btn btn-secondary">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">API Gateway</div>
+                            <div class="project-content">
+                                <h3>API Gateway</h3>
+                                <p>Microservices API gateway with rate limiting, authentication, and request routing.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Node.js</span>
+                                    <span class="tech-tag">Express</span>
+                                    <span class="tech-tag">JWT</span>
+                                    <span class="tech-tag">Redis</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="btn btn-primary">Live Demo</a>
+                                    <a href="#" class="btn btn-secondary">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">Portfolio Template</div>
+                            <div class="project-content">
+                                <h3>Portfolio Template</h3>
+                                <p>Responsive portfolio website template with dark mode and smooth animations.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">HTML</span>
+                                    <span class="tech-tag">CSS</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">GSAP</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="btn btn-primary">Live Demo</a>
+                                    <a href="#" class="btn btn-secondary">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!-- Services Page -->
+        <section id="services" class="page">
+            <div class="container">
+                <section class="section services-section">
+                    <h2>My Services</h2>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3>Full-Stack Development</h3>
+                            <p>End-to-end web application development using modern technologies and best practices.</p>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3>API Development</h3>
+                            <p>RESTful API design and implementation with proper authentication and documentation.</p>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h3>Database Design</h3>
+                            <p>Efficient database architecture and optimization for scalable applications.</p>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>Security Implementation</h3>
+                            <p>Secure authentication systems using bcrypt and other security best practices.</p>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3>Responsive Design</h3>
+                            <p>Mobile-first responsive designs that work perfectly on all devices and screen sizes.</p>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3>Performance Optimization</h3>
+                            <p>Website speed optimization and performance tuning for better user experience.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>Why Work With Me?</h2>
+                    <div class="skills-container">
+                        <div class="skill-category">
+                            <h3>Quality Assurance</h3>
+                            <p>I follow best practices and write clean, maintainable code with comprehensive testing.</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Timely Delivery</h3>
+                            <p>I respect deadlines and ensure projects are delivered on time without compromising quality.</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Continuous Support</h3>
+                            <p>I provide ongoing support and maintenance to ensure your application runs smoothly.</p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="#" class="btn btn-primary" data-page="contact">Start a Project</a>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!-- Blog Page -->
+        <section id="blog" class="page">
+            <div class="container">
+                <section class="section blog-section">
+                    <h2>Latest from My Blog</h2>
+                    <div class="blog-grid">
+                        <div class="blog-card">
+                            <div class="blog-image">Blog Image</div>
+                            <div class="blog-content">
+                                <h3>Building Secure Authentication with bcrypt</h3>
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar"></i> May 15, 2023</span>
+                                    <span><i class="far fa-clock"></i> 5 min read</span>
+                                </div>
+                                <p>Learn how to implement secure password hashing in your Node.js applications using bcrypt.</p>
+                                <a href="#" class="blog-link">Read More →</a>
+                            </div>
+                        </div>
+
+                        <div class="blog-card">
+                            <div class="blog-image">Blog Image</div>
+                            <div class="blog-content">
+                                <h3>Mastering EJS Templating</h3>
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar"></i> April 22, 2023</span>
+                                    <span><i class="far fa-clock"></i> 7 min read</span>
+                                </div>
+                                <p>Advanced techniques for creating dynamic web pages with EJS templating engine.</p>
+                                <a href="#" class="blog-link">Read More →</a>
+                            </div>
+                        </div>
+
+                        <div class="blog-card">
+                            <div class="blog-image">Blog Image</div>
+                            <div class="blog-content">
+                                <h3>Express.js Best Practices</h3>
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar"></i> March 10, 2023</span>
+                                    <span><i class="far fa-clock"></i> 10 min read</span>
+                                </div>
+                                <p>Essential tips and patterns for building robust Express.js applications.</p>
+                                <a href="#" class="blog-link">Read More →</a>
+                            </div>
+                        </div>
+
+                        <div class="blog-card">
+                            <div class="blog-image">Blog Image</div>
+                            <div class="blog-content">
+                                <h3>Deploying Node.js Apps to Production</h3>
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar"></i> February 28, 2023</span>
+                                    <span><i class="far fa-clock"></i> 8 min read</span>
+                                </div>
+                                <p>A comprehensive guide to deploying your Node.js applications with best practices.</p>
+                                <a href="#" class="blog-link">Read More →</a>
+                            </div>
+                        </div>
+
+                        <div class="blog-card">
+                            <div class="blog-image">Blog Image</div>
+                            <div class="blog-content">
+                                <h3>Database Optimization Techniques</h3>
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar"></i> January 15, 2023</span>
+                                    <span><i class="far fa-clock"></i> 6 min read</span>
+                                </div>
+                                <p>How to optimize your database queries for better application performance.</p>
+                                <a href="#" class="blog-link">Read More →</a>
+                            </div>
+                        </div>
+
+                        <div class="blog-card">
+                            <div class="blog-image">Blog Image</div>
+                            <div class="blog-content">
+                                <h3>Building RESTful APIs with Express</h3>
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar"></i> December 5, 2022</span>
+                                    <span><i class="far fa-clock"></i> 9 min read</span>
+                                </div>
+                                <p>Step-by-step guide to creating well-structured RESTful APIs using Express.js.</p>
+                                <a href="#" class="blog-link">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="page">
+            <div class="container">
+                <section class="section">
+                    <h2>Get In Touch</h2>
+                    <div class="contact-grid">
+                        <div class="contact-form-container">
+                            <form class="contact-form" id="contact-form">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Your Name</label>
+                                    <input type="text" id="name" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Your Email</label>
+                                    <input type="email" id="email" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <input type="text" id="subject" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message" class="form-label">Your Message</label>
+                                    <textarea id="message" class="form-textarea" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </form>
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h3>Email</h3>
+                                    <p>lazymilionaire94@email.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h3>Phone</h3>
+                                    <p>+254116309194</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h3>Location</h3>
+                                    <p>Nairobi, Kenya</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h3>Availability</h3>
+                                    <p>Monday - Friday: 9AM - 6PM PST</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Martin</h3>
+                    <p>Full-Stack Web Developer specializing in secure, efficient web applications.</p>
+                    <div class="social-links mt-2">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#" data-page="home">Home</a></li>
+                        <li><a href="#" data-page="about">About</a></li>
+                        <li><a href="#" data-page="projects">Projects</a></li>
+                        <li><a href="#" data-page="services">Services</a></li>
+                        <li><a href="#" data-page="blog">Blog</a></li>
+                        <li><a href="#" data-page="contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Full-Stack Development</a></li>
+                        <li><a href="#">API Development</a></li>
+                        <li><a href="#">Database Design</a></li>
+                        <li><a href="#">Security Implementation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Martin . All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile navigation toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = themeToggle.querySelector('i');
+
+            // Toggle mobile menu
+            if (navToggle) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+            }
+
+            // Close mobile menu when clicking on a link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                });
+            });
+
+            // Theme toggle functionality
+            themeToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                if (document.body.classList.contains('dark-mode')) {
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                } else {
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                }
+            });
+
+            // Page navigation
+            const pages = document.querySelectorAll('.page');
+            const pageLinks = document.querySelectorAll('[data-page]');
+            
+            pageLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetPage = this.getAttribute('data-page');
+                    
+                    // Hide all pages
+                    pages.forEach(page => {
+                        page.classList.remove('active');
+                    });
+                    
+                    // Show target page
+                    document.getElementById(targetPage).classList.add('active');
+                    
+                    // Update active nav link
+                    pageLinks.forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Scroll to top
+                    window.scrollTo(0, 0);
+                });
+            });
+
+            // Contact form handling
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simple form validation
+                    const inputs = this.querySelectorAll('input[required], textarea[required]');
+                    let isValid = true;
+
+                    inputs.forEach(input => {
+                        if (!input.value.trim()) {
+                            isValid = false;
+                            input.style.borderColor = '#ef4444';
+                        } else {
+                            input.style.borderColor = '';
+                        }
+                    });
+
+                    if (isValid) {
+                        // Here you would typically send the form data to your server
+                        alert('Thank you for your message! I will get back to you soon.');
+                        this.reset();
+                    } else {
+                        alert('Please fill in all required fields.');
+                    }
+                });
+            }
+
+            // Add fade-in animation to elements when they come into view
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            document.querySelectorAll('.project-card, .service-card, .skill-item, .blog-card').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
