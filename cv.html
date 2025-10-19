@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martin Omondo - Full-Stack Developer CV</title>
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #2563eb;
+            --bg-color: #ffffff;
+            --text-color: #334155;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* Dark theme variables */
+        .dark-theme {
+            --primary-color: #3b82f6;
+            --bg-color: #1e293b;
+            --text-color: #f1f5f9;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        }
+
+        /* CV Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: #f8fafc;
+            padding: 20px;
+            transition: var(--transition);
+        }
+
+        .dark-theme body {
+            background: #0f172a;
+        }
+
+        .cv-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--bg-color);
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .cv-header {
+            background: linear-gradient(135deg, #2563eb, #1e293b);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .cv-header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .cv-header .title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cv-body {
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .dark-theme .section-title {
+            border-bottom-color: #334155;
+        }
+
+        .summary {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #64748b;
+        }
+
+        .dark-theme .summary {
+            color: #94a3b8;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category h4 {
+            color: #1e293b;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .dark-theme .skill-category h4 {
+            color: #f1f5f9;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .dark-theme .skill-tag {
+            background: #334155;
+            color: #cbd5e1;
+        }
+
+        .experience-item, .project-item, .education-item {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .dark-theme .experience-item, 
+        .dark-theme .project-item, 
+        .dark-theme .education-item {
+            border-bottom-color: #334155;
+        }
+
+        .experience-item:last-child, .project-item:last-child, .education-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .dark-theme .item-title {
+            color: #f1f5f9;
+        }
+
+        .item-subtitle {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .item-date {
+            color: #64748b;
+            font-style: italic;
+        }
+
+        .dark-theme .item-date {
+            color: #94a3b8;
+        }
+
+        .item-description {
+            color: #475569;
+            margin-top: 0.5rem;
+        }
+
+        .dark-theme .item-description {
+            color: #cbd5e1;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .tech-tag {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .dark-theme .tech-tag {
+            background: #1e3a8a;
+            color: #dbeafe;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        .education-details {
+            color: #475569;
+        }
+
+        .dark-theme .education-details {
+            color: #cbd5e1;
+        }
+
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .certification-item {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .dark-theme .certification-item {
+            background: #334155;
+        }
+
+        .certification-title {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.25rem;
+        }
+
+        .dark-theme .certification-title {
+            color: #f1f5f9;
+        }
+
+        .certification-org {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .dark-theme .certification-org {
+            color: #94a3b8;
+        }
+
+        .languages {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .language-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .language-name {
+            font-weight: 500;
+            color: #1e293b;
+        }
+
+        .dark-theme .language-name {
+            color: #f1f5f9;
+        }
+
+        .language-level {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .dark-theme .language-level {
+            color: #94a3b8;
+        }
+
+        /* Navigation Header */
+        .portfolio-header {
+            background-color: var(--bg-color);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: calc(100% - 40px);
+            top: 20px;
+            z-index: 1000;
+            transition: var(--transition);
+            border-radius: 8px;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            max-width: 1000px;
+        }
+
+        .portfolio-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            padding: 5px;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover {
+            color: var(--primary-color);
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .dark-theme .theme-toggle:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* CV-specific adjustments */
+        .cv-page {
+            margin-top: 80px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .portfolio-header {
+                display: none;
+            }
+            
+            .cv-container {
+                box-shadow: none;
+                border-radius: 0;
+                margin-top: 0;
+            }
+            
+            .cv-page {
+                margin-top: 0;
+            }
+            
+            .project-link {
+                color: #2563eb;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-header {
+                width: calc(100% - 20px);
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .cv-header {
+                padding: 2rem 1rem;
+            }
+            
+            .cv-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .item-date {
+                margin-top: 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="portfolio-header">
+        <nav class="portfolio-nav">
+            <a href="index.html" class="logo">Martin Omondo</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#blog">Blog</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <a href="./cv.html" style="text-decoration: none; color: var(--text-color); font-weight: 500;" >View CV</a>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="cv-page">
+        <div class="cv-container">
+            <header class="cv-header">
+                <h1>Martin Omondo</h1>
+                <div class="title">Full-Stack Web Developer</div>
+                <p>Building secure, efficient web applications using modern technologies</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>lazymilionaire94@email.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+254116309194</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Nairobi, Kenya</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <span>github.com/superomosh94</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="cv-body">
+                <!-- Professional Summary -->
+                <section class="section">
+                    <h2 class="section-title">Professional Summary</h2>
+                    <p class="summary">
+                        Passionate full-stack web developer with over 5 years of experience building robust web applications. 
+                        Expertise in creating secure, scalable solutions using modern technologies like Express.js, EJS templating, 
+                        and implementing secure authentication systems with bcrypt. Strong background in database design, 
+                        RESTful API development, and performance optimization.
+                    </p>
+                </section>
+
+                <!-- Technical Skills -->
+                <section class="section">
+                    <h2 class="section-title">Technical Skills</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Frontend Development</h4>
+                            <div class="skill-items">
+                                <span class="skill-tag">HTML5</span>
+                                <span class="skill-tag">CSS3</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">EJS</span>
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Responsive Design</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Backend Development</h4>
+                            <div class="skill-items">
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Express.js</span>
+                                <span class="skill-tag">RESTful APIs</span>
+                                <span class="skill-tag">Authentication</span>
+                                <span class="skill-tag">bcrypt</span>
+                                <span class="skill-tag">JWT</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Databases</h4>
+                            <div class="skill-items">
+                                <span class="skill-tag">MongoDB</span>
+                                <span class="skill-tag">PostgreSQL</span>
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">Database Design</span>
+                                <span class="skill-tag">Query Optimization</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Tools & DevOps</h4>
+                            <div class="skill-items">
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">AWS</span>
+                                <span class="skill-tag">Jest</span>
+                                <span class="skill-tag">Webpack</span>
+                                <span class="skill-tag">CI/CD</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Professional Experience -->
+                <section class="section">
+                    <h2 class="section-title">Professional Experience</h2>
+                    
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <h3 class="item-title">Full-Stack Developer</h3>
+                                <div class="item-subtitle">Freelance & Contract Positions</div>
+                            </div>
+                            <div class="item-date">2019 - Present</div>
+                        </div>
+                        <div class="item-description">
+                            <p>Developed and deployed full-stack web applications for various clients, focusing on security, performance, and user experience.</p>
+                            <ul>
+                                <li>Implemented secure authentication systems using bcrypt and session management</li>
+                                <li>Built responsive front-end interfaces with EJS templating and modern CSS</li>
+                                <li>Designed and optimized database schemas for MySQL and MongoDB</li>
+                                <li>Deployed applications to cloud platforms including AWS and Render</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <h3 class="item-title">Web Development Specialist</h3>
+                                <div class="item-subtitle">Tech Solutions Company</div>
+                            </div>
+                            <div class="item-date">2017 - 2019</div>
+                        </div>
+                        <div class="item-description">
+                            <p>Collaborated with cross-functional teams to deliver web applications for enterprise clients.</p>
+                            <ul>
+                                <li>Developed RESTful APIs with Express.js and Node.js</li>
+                                <li>Implemented security best practices including SQL injection prevention and XSS protection</li>
+                                <li>Optimized application performance through code refactoring and database indexing</li>
+                                <li>Mentored junior developers and conducted code reviews</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Projects -->
+                <section class="section">
+                    <h2 class="section-title">Notable Projects</h2>
+                    
+                    <div class="project-item">
+                        <div class="item-header">
+                            <h3 class="item-title">FinMate - Finance Management System</h3>
+                            <div class="item-date">2024</div>
+                        </div>
+                        <div class="item-description">
+                            <p>Full-stack finance tracking system with user authentication, transaction management, and financial reporting.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">EJS</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">bcrypt</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://finmatev2.onrender.com" class="project-link">Live Demo</a>
+                                <a href="https://github.com/superomosh94/FinMateV2" class="project-link">GitHub Repository</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="item-header">
+                            <h3 class="item-title">EduLMS - Learning Management System</h3>
+                            <div class="item-date">2024</div>
+                        </div>
+                        <div class="item-description">
+                            <p>Collaborative learning platform with course management, user roles, and progress tracking.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">EJS</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">bcrypt</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://edu-lms-zeqh.onrender.com" class="project-link">Live Demo</a>
+                                <a href="https://github.com/superomosh94/edu-lms" class="project-link">GitHub Repository</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="item-header">
+                            <h3 class="item-title">E-Commerce Platform</h3>
+                            <div class="item-date">2024</div>
+                        </div>
+                        <div class="item-description">
+                            <p>Full-stack e-commerce solution with user authentication, payment processing, and admin dashboard.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">EJS</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">bcrypt</span>
+                                <span class="tech-tag">Stripe API</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Education -->
+                <section class="section">
+                    <h2 class="section-title">Education</h2>
+                    
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div>
+                                <h3 class="item-title">Bachelor of Science in Information Technology</h3>
+                                <div class="item-subtitle">Karatina University</div>
+                            </div>
+                            <div class="item-date">2014 - 2018</div>
+                        </div>
+                        <div class="education-details">
+                            <p>Graduated with First Class Honors. Relevant coursework: Data Structures, Algorithms, Database Systems, Web Technologies, Software Engineering.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Certifications -->
+                <section class="section">
+                    <h2 class="section-title">Certifications</h2>
+                    <div class="certifications">
+                        <div class="certification-item">
+                            <div class="certification-title">AWS Certified Developer - Associate</div>
+                            <div class="certification-org">Amazon Web Services</div>
+                        </div>
+                        <div class="certification-item">
+                            <div class="certification-title">Node.js Certified Developer</div>
+                            <div class="certification-org">OpenJS Foundation</div>
+                        </div>
+                        <div class="certification-item">
+                            <div class="certification-title">MongoDB Certified Developer</div>
+                            <div class="certification-org">MongoDB University</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Languages -->
+                <section class="section">
+                    <h2 class="section-title">Languages</h2>
+                    <div class="languages">
+                        <div class="language-item">
+                            <span class="language-name">English</span>
+                            <span class="language-level">Fluent</span>
+                        </div>
+                        <div class="language-item">
+                            <span class="language-name">Swahili</span>
+                            <span class="language-level">Native</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        // Check for saved theme preference or default to light
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        // Apply the saved theme
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+        
+        // Toggle theme function
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            
+            if (document.body.classList.contains('dark-theme')) {
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+
+        // Mobile menu functionality
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', () => {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            });
+        }
+    </script>
+</body>
+</html>
