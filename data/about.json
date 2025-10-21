@@ -1,0 +1,27 @@
+{
+  "name": "Martin Omondo",
+  "role": "Full-Stack Web Developer",
+  "bio": "I'm a passionate full-stack web developer with over 2 years of experience building robust web applications. My expertise lies in creating secure, scalable solutions using modern technologies. I specialize in Express.js, EJS templating, and implementing secure authentication systems with bcrypt. I believe in writing clean, maintainable code and following best practices for web development. When I'm not coding, I enjoy contributing to open-source projects, writing technical blogs, and exploring new technologies in the web development ecosystem.",
+  "skills": [
+    {
+      "icon": "fas fa-laptop-code",
+      "title": "Web Development",
+      "description": "Full-Stack Development, RESTful APIs, Database Design, Authentication Systems"
+    },
+    {
+      "icon": "fas fa-shield-alt",
+      "title": "Security",
+      "description": "Password Hashing, Data Encryption, SQL Injection Prevention, XSS Protection"
+    },
+    {
+      "icon": "fas fa-rocket",
+      "title": "DevOps",
+      "description": "CI/CD Pipelines, Containerization, Cloud Deployment, Performance Optimization"
+    },
+    {
+      "icon": "fas fa-graduation-cap",
+      "title": "Education",
+      "description": "Bachelor of Science in Information Technology, Karatina University (2014-2018)"
+    }
+  ]
+}
