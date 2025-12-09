@@ -1,1234 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martin Omondo - Full-Stack Developer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- SEO Meta Tags -->
+    <title>Martin Omondo - Full-Stack Developer | Node.js, Express, MySQL Expert</title>
+    <meta name="description"
+        content="Martin Omondo - Full-Stack Web Developer with 5+ years experience in Node.js, Express, MySQL. Specializing in secure, scalable web applications. View portfolio of projects.">
+    <meta name="keywords"
+        content="Full-Stack Developer, Node.js Developer, Express.js, MySQL, Web Development, JavaScript, REST API, Portfolio">
+    <meta name="author" content="Martin Omondo">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://martinomondo.com/">
+    <meta property="og:title" content="Martin Omondo - Full-Stack Developer">
+    <meta property="og:description"
+        content="Full-Stack Web Developer specializing in Node.js, Express, and secure web applications. View my portfolio and projects.">
+    <meta property="og:image" content="https://martinomondo.com/resource/workspace.png">
+    <meta property="og:site_name" content="Martin Omondo Portfolio">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Martin Omondo - Full-Stack Developer">
+    <meta name="twitter:description"
+        content="Full-Stack Web Developer specializing in Node.js, Express, and secure web applications.">
+    <meta name="twitter:image" content="https://martinomondo.com/resource/workspace.png">
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://martinomondo.com/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Font Awesome with SRI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- GSAP with SRI -->
+    <!-- GSAP with SRI -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
-    <style>
-        /* Enhanced Color Scheme - Navy + Gold */
-        :root {
-            --primary-color: #0A174E;
-            --secondary-color: #1e293b;
-            --accent-color: #F5D042;
-            --accent-hover: #e6b800;
-            --text-color: #334155;
-            --text-light: #64748b;
-            --bg-color: #ffffff;
-            --bg-light: #f8fafc;
-            --card-bg: #f8fafc;
-            --border-color: #e2e8f0;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
-            --shadow-hover: 0 25px 50px rgba(0, 0, 0, 0.15);
-            --border-radius: 16px;
-            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            --gradient: linear-gradient(135deg, var(--primary-color), #1e3a8a);
-            --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
-        }
-
-        .dark-mode {
-            --primary-color: #0A174E;
-            --secondary-color: #f1f5f9;
-            --accent-color: #F5D042;
-            --accent-hover: #e6b800;
-            --text-color: #e2e8f0;
-            --text-light: #94a3b8;
-            --bg-color: #0f172a;
-            --bg-light: #1e293b;
-            --card-bg: #1e293b;
-            --border-color: #334155;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
-        body {
-            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.7;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            transition: var(--transition);
-            overflow-x: hidden;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--bg-light);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--accent-color);
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-hover);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Enhanced Header & Navigation */
-        header {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            box-shadow: var(--shadow);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: var(--transition);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .dark-mode header {
-            background-color: rgba(15, 23, 42, 0.95);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            text-decoration: none;
-            position: relative;
-            transition: var(--transition);
-            z-index: 1001;
-        }
-
-        .logo::before {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: var(--gradient-accent);
-            transition: var(--transition);
-            border-radius: 2px;
-        }
-
-        .logo:hover::before {
-            width: 100%;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 35px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 600;
-            transition: var(--transition);
-            position: relative;
-            padding: 8px 0;
-            font-size: 1.1rem;
-        }
-
-        .nav-links a::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: var(--gradient-accent);
-            transition: var(--transition);
-            border-radius: 2px;
-        }
-
-        .nav-links a:hover::before,
-        .nav-links a.active::before {
-            width: 100%;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--accent-color);
-            transform: translateY(-2px);
-        }
-
-        .theme-toggle {
-            margin: 10px;
-            background: var(--gradient);
-            border: none;
-            color: white;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: var(--transition);
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow);
-            z-index: 1001;
-        }
-
-        .theme-toggle:hover {
-            transform: rotate(30deg) scale(1.1);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .mobile-menu {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            background: var(--gradient);
-            color: white;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow);
-            z-index: 1001;
-        }
-
-        /* Mobile Navigation Overlay */
-        .mobile-nav-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 999;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-
-        .mobile-nav-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Enhanced Page Content */
-        .page {
-            display: none;
-            padding-top: 100px;
-            min-height: calc(100vh - 70px);
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .page.active {
-            display: block;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        /* Enhanced Hero Section */
-        .hero {
-            padding: 80px 0 120px;
-            display: flex;
-            align-items: center;
-            min-height: 90vh;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: var(--gradient);
-            border-radius: 50%;
-            opacity: 0.05;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .hero-content {
-            flex: 1;
-            padding-right: 40px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            line-height: 1.1;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: slideInLeft 1s ease-out;
-        }
-
-        .hero-subtitle {
-            font-size: 1.8rem;
-            color: var(--accent-color);
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-            animation: slideInLeft 1s ease-out 0.2s both;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            color: var(--text-light);
-            animation: slideInLeft 1s ease-out 0.4s both;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 16px 35px;
-            background: var(--gradient-accent);
-            color: var(--primary-color);
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            font-size: 1.1rem;
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: var(--transition);
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--accent-color);
-            border: 3px solid var(--accent-color);
-            margin-left: 15px;
-        }
-
-        .btn-secondary:hover {
-            background: var(--accent-color);
-            color: var(--primary-color);
-        }
-
-        .hero-image {
-            flex: 1;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .profile-img {
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 6px solid var(--accent-color);
-            box-shadow: var(--shadow-lg);
-            background: var(--gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 4.5rem;
-            font-weight: 800;
-            transition: var(--transition);
-            animation: float 6s ease-in-out infinite;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .profile-img::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(transparent, var(--accent-color), transparent 30%);
-            animation: rotate 4s linear infinite;
-        }
-
-        .profile-img::after {
-            content: '';
-            position: absolute;
-            inset: 4px;
-            background: var(--gradient);
-            border-radius: 50%;
-        }
-
-        .profile-img span {
-            position: relative;
-            z-index: 3;
-        }
-
-        @keyframes rotate {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Enhanced About Section */
-        .section {
-            padding: 120px 0;
-            position: relative;
-        }
-
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 3.2rem;
-            margin-bottom: 70px;
-            color: var(--primary-color);
-            position: relative;
-            font-weight: 800;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 6px;
-            background: var(--gradient-accent);
-            border-radius: 3px;
-            animation: expandWidth 1s ease-out 0.5s both;
-        }
-
-        @keyframes expandWidth {
-            from { width: 0; }
-            to { width: 100px; }
-        }
-
-        .about-content {
-            display: flex;
-            gap: 60px;
-            align-items: flex-start;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text h3 {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            color: var(--secondary-color);
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .skills {
-            flex: 1;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .skill-item {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border: 1px solid var(--border-color);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(245, 208, 66, 0.1), transparent);
-            transition: var(--transition);
-        }
-
-        .skill-item:hover::before {
-            left: 100%;
-        }
-
-        .skill-item:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--accent-color);
-        }
-
-        .skill-item i {
-            font-size: 3rem;
-            color: var(--accent-color);
-            margin-bottom: 20px;
-            transition: var(--transition);
-        }
-
-        .skill-item:hover i {
-            transform: scale(1.2);
-        }
-
-        /* Enhanced Projects Section */
-        .projects {
-            background-color: var(--bg-light);
-        }
-
-        .filter-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 60px;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            padding: 12px 28px;
-            background: transparent;
-            border: 3px solid var(--accent-color);
-            color: var(--accent-color);
-            border-radius: 50px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-weight: 700;
-            font-size: 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .filter-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-accent);
-            transition: var(--transition);
-            z-index: -1;
-        }
-
-        .filter-btn.active,
-        .filter-btn:hover {
-            color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-
-        .filter-btn.active::before,
-        .filter-btn:hover::before {
-            left: 0;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-            gap: 40px;
-        }
-
-        .project-card {
-            background: var(--bg-color);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border: 1px solid var(--border-color);
-            position: relative;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-accent);
-            transform: scaleX(0);
-            transition: var(--transition);
-            transform-origin: left;
-        }
-
-        .project-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .project-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .project-img {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-            background: var(--gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .project-img::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(10, 23, 78, 0.8);
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .project-card:hover .project-img::after {
-            opacity: 1;
-        }
-
-        .project-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .project-card:hover .project-img img {
-            transform: scale(1.1);
-        }
-
-        .project-info {
-            padding: 30px;
-        }
-
-        .project-info h3 {
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-            color: var(--secondary-color);
-            font-weight: 700;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .tag {
-            background: var(--gradient-accent);
-            color: var(--primary-color);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            transition: var(--transition);
-        }
-
-        .tag:hover {
-            transform: scale(1.05);
-        }
-
-        .project-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .project-links .btn {
-            padding: 12px 24px;
-            font-size: 0.9rem;
-            flex: 1;
-            text-align: center;
-        }
-
-        /* Enhanced Services Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .service-card {
-            background: var(--card-bg);
-            padding: 40px 30px;
-            border-radius: var(--border-radius);
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border: 1px solid var(--border-color);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-accent);
-            transform: scaleX(0);
-            transition: var(--transition);
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .service-icon {
-            font-size: 4rem;
-            margin-bottom: 25px;
-            color: var(--accent-color);
-            transition: var(--transition);
-        }
-
-        .service-card:hover .service-icon {
-            transform: scale(1.2) rotate(10deg);
-        }
-
-        /* Enhanced Contact Section */
-        .contact-form {
-            max-width: 700px;
-            margin: 0 auto;
-            background: var(--card-bg);
-            padding: 50px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border-color);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-form::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-accent);
-        }
-
-        .form-group {
-            margin-bottom: 30px;
-            position: relative;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 12px;
-            font-weight: 700;
-            color: var(--secondary-color);
-            font-size: 1.1rem;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 18px 20px;
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            background: var(--bg-color);
-            color: var(--text-color);
-            transition: var(--transition);
-            font-size: 1rem;
-            font-family: inherit;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 4px rgba(245, 208, 66, 0.1);
-            transform: translateY(-2px);
-        }
-
-        textarea.form-control {
-            min-height: 180px;
-            resize: vertical;
-        }
-
-        /* Enhanced Footer */
-        footer {
-            background: var(--gradient);
-            padding: 70px 0 30px;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-accent);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 50px;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: var(--transition);
-            font-size: 1.5rem;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .social-links a:hover {
-            background: var(--accent-color);
-            color: var(--primary-color);
-            transform: translateY(-8px) scale(1.1);
-            border-color: var(--accent-color);
-        }
-
-        .copyright {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1rem;
-            margin-top: 30px;
-        }
-
-        /* Loading Spinner Enhancement */
-        .loading {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 3rem;
-        }
-
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid rgba(245, 208, 66, 0.2);
-            border-left-color: var(--accent-color);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Enhanced Responsive Design */
-        /* Large devices (desktops, 1200px and up) */
-        @media (max-width: 1200px) {
-            .container {
-                max-width: 1140px;
-            }
-        }
-
-        /* Medium devices (tablets, 992px and up) */
-        @media (max-width: 992px) {
-            .container {
-                max-width: 960px;
-            }
-            
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 60px 0 100px;
-            }
-
-            .hero-content {
-                padding-right: 0;
-                margin-bottom: 60px;
-            }
-
-            .hero h1 {
-                font-size: 3.2rem;
-            }
-
-            .about-content {
-                flex-direction: column;
-            }
-
-            .profile-img {
-                width: 320px;
-                height: 320px;
-                font-size: 3.5rem;
-            }
-            
-            .nav-links {
-                gap: 25px;
-            }
-            
-            .nav-links a {
-                font-size: 1rem;
-            }
-        }
-
-        /* Small devices (landscape phones, 768px and up) */
-        @media (max-width: 768px) {
-            .container {
-                max-width: 720px;
-                padding: 0 15px;
-            }
-            
-            .nav-links {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100vh;
-                background: var(--bg-color);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                z-index: 1000;
-                gap: 30px;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links a {
-                font-size: 1.5rem;
-                padding: 10px 0;
-            }
-
-            .mobile-menu {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.5rem;
-            }
-
-            .profile-img {
-                width: 280px;
-                height: 280px;
-                font-size: 3rem;
-            }
-
-            .section-title {
-                font-size: 2.5rem;
-            }
-
-            .skills {
-                grid-template-columns: 1fr;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-form {
-                padding: 30px;
-            }
-            
-            .hero-buttons {
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
-                align-items: center;
-            }
-            
-            .btn-secondary {
-                margin-left: 0;
-            }
-            
-            .filter-buttons {
-                gap: 10px;
-            }
-            
-            .filter-btn {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-            
-            .project-links {
-                flex-direction: column;
-            }
-            
-            .social-links {
-                gap: 15px;
-            }
-            
-            .social-links a {
-                width: 50px;
-                height: 50px;
-                font-size: 1.3rem;
-            }
-            
-            .page {
-                padding-top: 90px;
-            }
-            
-            .section {
-                padding: 80px 0;
-            }
-        }
-
-        /* Extra small devices (portrait phones, less than 576px) */
-        @media (max-width: 576px) {
-            .container {
-                max-width: 100%;
-                padding: 0 15px;
-            }
-            
-            .filter-buttons {
-                flex-wrap: wrap;
-            }
-
-            .btn-secondary {
-                margin-left: 0;
-                margin-top: 15px;
-            }
-
-            .hero h1 {
-                font-size: 2.3rem;
-            }
-
-            .profile-img {
-                width: 250px;
-                height: 250px;
-                font-size: 2.5rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.3rem;
-            }
-            
-            .btn {
-                padding: 14px 25px;
-                font-size: 1rem;
-            }
-            
-            .skill-item {
-                padding: 20px;
-            }
-            
-            .service-card {
-                padding: 30px 20px;
-            }
-            
-            .contact-form {
-                padding: 20px;
-            }
-            
-            .form-control {
-                padding: 15px;
-            }
-            
-            .project-info {
-                padding: 20px;
-            }
-            
-            .project-img {
-                height: 200px;
-            }
-            
-            .logo {
-                font-size: 1.5rem;
-            }
-            
-            .nav-links a {
-                font-size: 1.3rem;
-            }
-            
-            .copyright {
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Very small devices (less than 400px) */
-        @media (max-width: 400px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .profile-img {
-                width: 220px;
-                height: 220px;
-                font-size: 2rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .btn {
-                padding: 12px 20px;
-                font-size: 0.9rem;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .project-card {
-                margin: 0 5px;
-            }
-            
-            .filter-btn {
-                padding: 8px 16px;
-                font-size: 0.8rem;
-            }
-        }
-
-        /* Orientation-specific styles */
-        @media (max-height: 500px) and (orientation: landscape) {
-            .hero {
-                min-height: auto;
-                padding: 60px 0;
-            }
-            
-            .profile-img {
-                width: 200px;
-                height: 200px;
-            }
-            
-            .nav-links.active {
-                padding: 50px 0;
-            }
-        }
-
-        /* High-resolution displays */
-        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-            .logo {
-                font-weight: 700;
-            }
-        }
-
-        /* Print styles */
-        @media print {
-            .theme-toggle,
-            .mobile-menu,
-            .nav-links,
-            footer {
-                display: none !important;
-            }
-            
-            .page {
-                display: block !important;
-                padding-top: 0;
-            }
-            
-            .hero {
-                page-break-after: always;
-            }
-            
-            body {
-                color: #000;
-                background: #fff;
-            }
-        }
-    </style>
 </head>
+
 <body>
     <!-- Mobile Navigation Overlay -->
     <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
@@ -1237,857 +63,426 @@
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo" data-page="home">Martin O</a>
+                <a href="index.html" class="logo">Martin O</a>
                 <div class="nav-links" id="navLinks">
-                    <a href="#" class="active" data-page="home">Home</a>
-                    <a href="#" data-page="about">About</a>
-                    <a href="#" data-page="projects">Projects</a>
-                    <a href="#" data-page="services">Services</a>
-                    <a href="#" data-page="blog">Blog</a>
-                    <a href="#" data-page="contact">Contact</a>
+                    <a href="index.html" class="active">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="services.html">Services</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
                 </div>
-                <div class="nav-buttons" style="display: flex;">
-                    <a href="#" class="btn btn-secondary" style="text-decoration: none; font-weight: 500;" data-page="cv">Download Resume</a>
-                    <a href="./cv.html" class="btn btn-secondary" style="text-decoration: none; font-weight: 500;">View Resume</a>
-                    <button class="theme-toggle" id="themeToggle">
-                        <i class="fas fa-moon"></i>         
-                    </button>
-                    <div class="mobile-menu" id="mobileMenu">
-                        <i class="fas fa-bars"></i>
-                    </div>
-                </div>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu" id="mobileMenu" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars"></i>
+                </button>
             </nav>
         </div>
     </header>
 
     <!-- Home Page -->
-    <section id="home" class="page active">
-        <div class="container">
-            <section class="hero">
+    <div class="page active" id="home">
+        <!-- Hero Section - Professional Design -->
+        <section class="hero">
+            <div class="container">
                 <div class="hero-content">
-                    <h1>Hi, I'm <span style="color: var(--primary-color);">Martin O</span></h1>
-                    <p class="hero-subtitle">Full-Stack Web Developer</p>
-                    <p>I build secure, efficient web applications using modern technologies like Express, EJS, and bcrypt. Passionate about creating user-friendly digital experiences.</p>
+                    <div class="badge">
+                        <i class="fas fa-hand-wave"></i>
+                        Available for work
+                    </div>
+                    <h1>Hi, I'm <span class="highlight">Martin Omondo</span></h1>
+                    <h2 class="hero-subtitle">Full-Stack Developer specializing in Node.js, Express & Secure Web
+                        Applications</h2>
+                    <p>Professional web developer with 5+ years of experience building scalable, secure web applications
+                        using modern JavaScript technologies. Expert in Node.js, Express.js, MySQL, MongoDB, and RESTful
+                        API development.</p>
                     <div class="hero-buttons">
-                        <a href="#" class="btn" data-page="projects">View My Work</a>
-                        <a href="#" class="btn btn-secondary" data-page="contact">Get In Touch</a>
+                        <a href="contact.html" class="btn">
+                            <i class="fas fa-envelope"></i>
+                            Get In Touch
+                        </a>
+                        <a href="./resource/resume/martin-resume.pdf" class="btn btn-secondary" target="_blank">
+                            <i class="fas fa-download"></i>
+                            Download Resume
+                        </a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div class="profile-img" style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 600;">
-                        <span>MO</span>
+                    <div class="hero-visual">
+                        <div class="blob blob-1"></div>
+                        <div class="blob blob-2"></div>
+                        <div class="profile-img" role="img" aria-label="Martin Omondo - Full-Stack Developer">
+                            <span>MO</span>
+                        </div>
                     </div>
                 </div>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">Technologies I Use</h2>
-                <div id="skills-container" class="skills">
-                    <div class="loading">
-                        <div class="spinner"></div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </section>
+            </div>
+        </section>
+    </div>
 
     <!-- About Page -->
-    <section id="about" class="page">
-        <div class="container">
-            <section class="section">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <h3>My Journey</h3>
-                        <div id="about-bio">
-                            <div class="loading">
-                                <div class="spinner"></div>
-                            </div>
-                        </div>
-                        <div style="margin-top: 30px;">
-                            <a href="#" class="btn" data-page="contact">Hire Me</a>
-                            <a href="#" class="btn btn-secondary" data-page="cv">View CV</a>
-                        </div>
+    <div class="page" id="about">
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <i class="fas fa-user"></i>
+                        About Me
                     </div>
-                    <div id="about-skills" class="skills">
-                        <div class="loading">
-                            <div class="spinner"></div>
-                        </div>
+                    <h2 class="section-title">My Journey</h2>
+                    <p class="section-description" id="aboutBio">Loading...</p>
+                </div>
+                <div class="about-content" id="aboutContent">
+                    <div class="loading">
+                        <div class="spinner"></div>
                     </div>
                 </div>
-            </section>
-        </div>
-    </section>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <i class="fas fa-code"></i>
+                        Skills & Expertise
+                    </div>
+                    <h2 class="section-title">What I Do Best</h2>
+                </div>
+                <div class="about-content" id="skillsContainer">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- Projects Page -->
-    <section id="projects" class="page">
-        <div class="container">
-            <section class="section">
-                <h2 class="section-title">My Projects</h2>
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="web">Web Apps</button>
-                    <button class="filter-btn" data-filter="finance">Finance</button>
-                    <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+    <div class="page" id="projects">
+        <section class="section projects">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <i class="fas fa-laptop-code"></i>
+                        My Work
+                    </div>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-description">Explore my latest work and side projects</p>
                 </div>
-                <div id="projects-container" class="projects-grid">
+
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+                    <button class="filter-btn" data-filter="frontend">Frontend</button>
+                    <button class="filter-btn" data-filter="backend">Backend</button>
+                </div>
+
+                <div class="projects-grid" id="projectsGrid">
                     <div class="loading">
                         <div class="spinner"></div>
                     </div>
                 </div>
-            </section>
-        </div>
-    </section>
+            </div>
+        </section>
+    </div>
 
     <!-- Services Page -->
-    <section id="services" class="page">
-        <div class="container">
-            <section class="section">
-                <h2 class="section-title">My Services</h2>
-                <div id="services-container" class="services-grid">
+    <div class="page" id="services">
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <i class="fas fa-briefcase"></i>
+                        Services
+                    </div>
+                    <h2 class="section-title">What I Offer</h2>
+                    <p class="section-description">Professional web development services tailored to your needs</p>
+                </div>
+                <div class="services-grid" id="servicesGrid">
                     <div class="loading">
                         <div class="spinner"></div>
                     </div>
                 </div>
-            </section>
-        </div>
-    </section>
-
-    <!-- Blog Page -->
-    <section id="blog" class="page">
-        <div class="container">
-            <section class="section">
-                <h2 class="section-title">Latest from My Blog</h2>
-                <div id="blog-container" class="blog-grid">
-                    <div class="loading">
-                        <div class="spinner"></div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </section>
+            </div>
+        </section>
+    </div>
 
     <!-- Contact Page -->
-    <section id="contact" class="page">
-        <div class="container">
-            <section class="section">
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" class="form-control" placeholder="Enter subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" class="form-control" placeholder="Enter your message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
+    <div class="page" id="contact">
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <i class="fas fa-envelope"></i>
+                        Contact
+                    </div>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-description">Let's discuss your project or opportunity</p>
                 </div>
-            </section>
-        </div>
-    </section>
 
-    <!-- CV Page -->
-    <section id="cv" class="page">
-        <div class="container">
-            <section class="section">
-                <h2 class="section-title">My CV</h2>
-                <div style="text-align: center; padding: 3rem 0;">
-                    <i class="fas fa-file-pdf" style="font-size: 4rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
-                    <h3 style="margin-bottom: 1rem; color: var(--secondary-color);">Download My Resume</h3>
-                    <p style="color: var(--text-light); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                        Download my comprehensive Resume to learn more about my experience, skills, and qualifications.
-                    </p>
-                   <a href="./resource/resume/martin-resume.pdf" class="btn" download style="text-decoration: none;">
-  <i class="fas fa-download"></i> Download Resume (PDF)
-</a>
-
-                    <p style="margin-top: 2rem; color: var(--text-light); font-size: 0.9rem;">
-                        Alternatively, you can view my <a href="#" data-page="about" style="color: var(--primary-color); text-decoration: none;">About page</a> for a summary of my background.
-                    </p>
-                </div>
-            </section>
-        </div>
-    </section>
+                <form class="contact-form" id="contactForm" action="mailto:omondo906@gmail.com" method="POST"
+                    enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control"
+                            placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" class="form-control"
+                            placeholder="Project Inquiry" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" class="form-control"
+                            placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </section>
+    </div>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="https://github.com/superomosh94" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/martin-omondo" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://twitter.com/martinomondo" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://instagram.com/martin.omondo" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/superomosh94" target="_blank" rel="noopener noreferrer"
+                    aria-label="GitHub Profile">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/martin-omondo" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://twitter.com/martinomondo" target="_blank" rel="noopener noreferrer"
+                    aria-label="Twitter Profile">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="mailto:omondo94@gmail.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
             </div>
-            <p class="copyright">© 2025 Martin Omondo. All Rights Reserved.</p>
+            <p class="copyright">&copy; 2025 Martin Omondo. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+    <script src="seo-schema.js"></script>
     <script>
-        // Enhanced mobile navigation
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            const navLinks = document.getElementById('navLinks');
-            const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-            
-            // Toggle mobile navigation
-            function toggleMobileNav() {
-                navLinks.classList.toggle('active');
-                mobileNavOverlay.classList.toggle('active');
-                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof injectStructuredData === 'function') {
+                injectStructuredData('home');
             }
-            
-            mobileMenu.addEventListener('click', toggleMobileNav);
-            mobileNavOverlay.addEventListener('click', toggleMobileNav);
-            
-            // Close mobile nav when clicking on a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (window.innerWidth <= 768) {
-                        toggleMobileNav();
-                    }
-                });
-            });
-            
-            // Close mobile nav on window resize
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
-                    toggleMobileNav();
-                }
-            });
-            
-            // Touch-friendly improvements
-            document.querySelectorAll('.btn, .filter-btn, .nav-links a').forEach(element => {
-                element.addEventListener('touchstart', function() {
-                    this.classList.add('touch-active');
-                });
-                
-                element.addEventListener('touchend', function() {
-                    this.classList.remove('touch-active');
-                });
-            });
-            
-            // Prevent zoom on double-tap for buttons (iOS)
-            document.querySelectorAll('button, .btn, a').forEach(element => {
-                element.addEventListener('touchend', function(e) {
-                    e.preventDefault();
-                });
-            });
-            
-            // Enhanced animations with GSAP
-            // Initialize GSAP
-            gsap.registerPlugin(ScrollTrigger, TextPlugin);
-
-            // Enhanced page transitions
-            const pages = document.querySelectorAll('.page');
-            const navLinksAll = document.querySelectorAll('.nav-links a, .btn[data-page]');
-            
-            function showPage(pageId) {
-                pages.forEach(page => {
-                    if (page.id === pageId) {
-                        gsap.fromTo(page, 
-                            { opacity: 0, y: 50 },
-                            { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
-                        );
-                        page.classList.add('active');
-                    } else {
-                        page.classList.remove('active');
-                    }
-                });
-                window.scrollTo(0, 0);
-            }
-
-            // Enhanced hero text animation
-            const heroTitle = document.querySelector('.hero h1');
-            if (heroTitle) {
-                gsap.from(heroTitle, {
-                    duration: 1.2,
-                    y: 100,
-                    opacity: 0,
-                    ease: "power3.out",
-                    delay: 0.3
-                });
-            }
-
-            // Enhanced skill items animation
-            const animateSkills = () => {
-                gsap.from('.skill-item', {
-                    scrollTrigger: {
-                        trigger: '.skills',
-                        start: 'top 80%',
-                    },
-                    duration: 0.8,
-                    y: 60,
-                    opacity: 0,
-                    stagger: 0.1,
-                    ease: "back.out(1.7)"
-                });
-            };
-
-            // Enhanced project cards animation
-            const animateProjects = () => {
-                gsap.from('.project-card', {
-                    scrollTrigger: {
-                        trigger: '.projects-grid',
-                        start: 'top 80%',
-                    },
-                    duration: 0.8,
-                    y: 80,
-                    opacity: 0,
-                    stagger: 0.15,
-                    ease: "power3.out"
-                });
-            };
-
-            // Enhanced service cards animation
-            const animateServices = () => {
-                gsap.from('.service-card', {
-                    scrollTrigger: {
-                        trigger: '.services-grid',
-                        start: 'top 80%',
-                    },
-                    duration: 0.8,
-                    y: 60,
-                    opacity: 0,
-                    stagger: 0.1,
-                    ease: "power3.out"
-                });
-            };
-
-            // Enhanced floating animation for profile image
-            gsap.to('.profile-img', {
-                y: -20,
-                duration: 2,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut"
-            });
-
-            // Enhanced scroll animations for all sections
-            gsap.utils.toArray('.section').forEach(section => {
-                gsap.from(section, {
-                    scrollTrigger: {
-                        trigger: section,
-                        start: 'top 80%',
-                        end: 'bottom 20%',
-                        toggleActions: 'play none none reverse'
-                    },
-                    y: 60,
-                    opacity: 0,
-                    duration: 1,
-                    ease: "power3.out"
-                });
-            });
-
-            // Enhanced button hover animations
-            document.querySelectorAll('.btn').forEach(btn => {
-                btn.addEventListener('mouseenter', () => {
-                    gsap.to(btn, {
-                        scale: 1.05,
-                        duration: 0.3,
-                        ease: "back.out(1.7)"
-                    });
-                });
-                
-                btn.addEventListener('mouseleave', () => {
-                    gsap.to(btn, {
-                        scale: 1,
-                        duration: 0.3,
-                        ease: "power3.out"
-                    });
-                });
-            });
-
-            // Enhanced card hover animations
-            document.querySelectorAll('.skill-item, .project-card, .service-card').forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    gsap.to(card, {
-                        y: -10,
-                        duration: 0.4,
-                        ease: "power3.out"
-                    });
-                });
-                
-                card.addEventListener('mouseleave', () => {
-                    gsap.to(card, {
-                        y: 0,
-                        duration: 0.4,
-                        ease: "power3.out"
-                    });
-                });
-            });
-
-            // Initialize animations when page loads
-            window.addEventListener('load', () => {
-                animateSkills();
-                // Other animation initializations will be called when their respective pages load
-            });
-
-            // Your existing JavaScript functionality remains the same below...
-            // Data loading functions, page navigation, etc.
-
         });
-    </script>
 
-    <!-- Your existing JavaScript code remains exactly the same -->
-    <script>
-        // Data loading functions
-        async function loadJSON(file) {
-            try {
-                const response = await fetch(file);
-                if (!response.ok) {
-                    throw new Error(`Failed to load ${file}: ${response.status}`);
+        // 1. INLINED DATA (Subset for Home)
+        window.portfolioData = {
+            projects: [
+                {
+                    "id": 1,
+                    "title": "FinMate - Finance Management System",
+                    "category": "finance",
+                    "description": "Full-stack finance tracking system with user authentication, transaction management, and financial reporting.",
+                    "image": "./resource/image.png",
+                    "tech": ["Express", "EJS", "MySQL", "bcrypt"],
+                    "github": "https://github.com/superomosh94/FinMateV2",
+                    "demo": "https://finmatev2.onrender.com"
+                },
+                {
+                    "id": 2,
+                    "title": "EduLMS - Learning Management System",
+                    "category": "web",
+                    "description": "Collaborative learning platform with course management, user roles, and progress tracking.",
+                    "image": "./resource/edulms.png",
+                    "tech": ["Node.js", "EJS", "MySQL", "bcrypt"],
+                    "github": "https://github.com/superomosh94/edu-lms",
+                    "demo": "https://edu-lms-zeqh.onrender.com"
+                },
+                {
+                    "id": 3,
+                    "title": "Devvoxa",
+                    "category": "web",
+                    "description": "Professional web development brand website offering tailored single-page and multi-page designs for businesses, with pricing in USD and KES.",
+                    "image": "./resource/devoxxa.png",
+                    "tech": ["HTML", "CSS", "JavaScript", "Vercel"],
+                    "github": "https://github.com/superomosh94/Devvoxa",
+                    "demo": "https://devvoxa.vercel.app/"
+                },
+                {
+                    "id": 4,
+                    "title": "Star-Net Kenya",
+                    "category": "web",
+                    "description": "Static web app showcasing data, minutes, and SMS bundles with a responsive design and simulated M-Pesa purchase flow.",
+                    "image": "./resource/starnet.png",
+                    "tech": ["HTML", "CSS", "JavaScript", "Vercel"],
+                    "github": "https://github.com/superomosh94/Data",
+                    "demo": "https://data-green-nine.vercel.app/"
                 }
-                return await response.json();
-            } catch (error) {
-                console.error('Error loading JSON:', error);
-                return null;
+            ],
+            services: [
+                {
+                    "icon": "fas fa-code",
+                    "title": "Full-Stack Web Development",
+                    "description": "End-to-end web application development using modern technologies like Node.js, Express, and React."
+                },
+                {
+                    "icon": "fas fa-server",
+                    "title": "Backend & API Architecture",
+                    "description": "Designing robust RESTful APIs and server-side logic. Expertise in database design (MySQL, MongoDB)."
+                },
+                {
+                    "icon": "fas fa-mobile-alt",
+                    "title": "Responsive UI/UX Design",
+                    "description": "Creating engaging, mobile-first interfaces that provide seamless user experiences across all devices."
+                },
+                {
+                    "icon": "fas fa-chart-line",
+                    "title": "Technical Consulting & SEO",
+                    "description": "Providing technical guidance on software architecture and implementing SEO best practices."
+                }
+            ],
+            skillsDetailed: [
+                {
+                    "icon": "fab fa-node-js",
+                    "title": "Backend Development",
+                    "description": "Expert in Node.js runtime and Express framework."
+                },
+                {
+                    "icon": "fas fa-database",
+                    "title": "Database Design",
+                    "description": "Proficient in SQL (MySQL) and NoSQL (MongoDB)."
+                },
+                {
+                    "icon": "fab fa-html5",
+                    "title": "Frontend Technologies",
+                    "description": "Strong command of HTML5, CSS3, JavaScript (ES6+)."
+                },
+                {
+                    "icon": "fas fa-tools",
+                    "title": "DevOps & Tools",
+                    "description": "Experience with Git, Docker, and deployment."
+                }
+            ]
+        };
+
+        // 2. INLINED LOGIC
+        const themeToggle = document.getElementById('themeToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.body.classList.add('dark-mode');
+                if (themeToggle) themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
             }
         }
 
-        // Load and display skills
-        async function loadSkills() {
-            const skillsData = await loadJSON('./data/skills.json');
-            const skillsContainer = document.getElementById('skills-container');
-            
-            if (skillsData && skillsContainer) {
-                skillsContainer.innerHTML = skillsData.map(skill => `
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                const isDark = document.body.classList.contains('dark-mode');
+                themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            });
+        }
+
+        function toggleMobileNav() {
+            if (navLinks) navLinks.classList.toggle('active');
+            if (mobileNavOverlay) mobileNavOverlay.classList.toggle('active');
+            document.body.style.overflow = navLinks && navLinks.classList.contains('active') ? 'hidden' : '';
+        }
+
+        if (mobileMenu) mobileMenu.addEventListener('click', toggleMobileNav);
+        if (mobileNavOverlay) mobileNavOverlay.addEventListener('click', toggleMobileNav);
+
+        function loadHomeContent() {
+            // Load Projects
+            const projectsGrid = document.getElementById('projectsGrid');
+            if (projectsGrid) {
+                const projects = window.portfolioData.projects;
+                projectsGrid.innerHTML = projects.map(project => `
+                    <div class="project-card" data-category="${project.category}">
+                        <div class="project-img">
+                            <img src="${project.image}" alt="${project.title} - ${project.description}" onerror="this.src='https://via.placeholder.com/400x300?text=Project+Image'">
+                        </div>
+                        <div class="project-info">
+                            <h3>${project.title}</h3>
+                            <p>${project.description}</p>
+                            <div class="project-tags">
+                                ${project.tech.map(t => `<span class="tag">${t}</span>`).join('')}
+                            </div>
+                            <div class="project-links">
+                                ${project.github ? `<a href="${project.github}" class="btn btn-secondary" target="_blank"><i class="fab fa-github"></i> Code</a>` : ''}
+                                ${project.demo ? `<a href="${project.demo}" class="btn" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Load Services
+            const servicesGrid = document.getElementById('servicesGrid');
+            if (servicesGrid) {
+                const services = window.portfolioData.services;
+                servicesGrid.innerHTML = services.map(service => `
+                    <div class="service-card">
+                        <div class="service-icon"><i class="${service.icon}"></i></div>
+                        <h3>${service.title}</h3>
+                        <p>${service.description}</p>
+                    </div>
+                `).join('');
+            }
+
+            // Load Skills
+            const skillsContainer = document.getElementById('skillsContainer');
+            if (skillsContainer) {
+                const skills = window.portfolioData.skillsDetailed;
+                skillsContainer.innerHTML = skills.map(skill => `
                     <div class="skill-item">
                         <i class="${skill.icon}"></i>
                         <h4>${skill.title}</h4>
                         <p>${skill.description}</p>
                     </div>
                 `).join('');
-            } else {
-                skillsContainer.innerHTML = '<p>Failed to load skills. Please try again later.</p>';
             }
         }
 
-        // Load and display about section
-        async function loadAbout() {
-            const aboutData = await loadJSON('./data/about.json');
-            const aboutBio = document.getElementById('about-bio');
-            const aboutSkills = document.getElementById('about-skills');
-            
-            if (aboutData) {
-                if (aboutBio) {
-                    aboutBio.innerHTML = `<p>${aboutData.bio}</p>`;
-                }
-                
-                if (aboutSkills) {
-                    aboutSkills.innerHTML = aboutData.skills.map(skill => `
-                        <div class="skill-item">
-                            <i class="${skill.icon}"></i>
-                            <h4>${skill.title}</h4>
-                            <p>${skill.description}</p>
-                        </div>
-                    `).join('');
-                }
-            } else {
-                if (aboutBio) aboutBio.innerHTML = '<p>Failed to load about information.</p>';
-                if (aboutSkills) aboutSkills.innerHTML = '<p>Failed to load skills.</p>';
-            }
-        }
-
-        // Load and display projects
-        async function loadProjects() {
-            const projectsData = await loadJSON('./data/projects.json');
-            const projectsContainer = document.getElementById('projects-container');
-            
-            if (projectsData && projectsContainer) {
-                projectsContainer.innerHTML = projectsData.map(project => {
-                    // Handle missing images
-                    const imageContent = project.image && project.image !== '#' ? 
-                        `<img src="${project.image}" alt="${project.title}">` :
-                        `<div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); color: white; font-weight: 600;">
-                            <i class="fas fa-code" style="font-size: 2rem;"></i>
-                        </div>`;
-                    
-                    return `
-                        <div class="project-card" data-category="${project.category}">
-                            <div class="project-img">
-                                ${imageContent}
-                            </div>
-                            <div class="project-info">
-                                <h3>${project.title}</h3>
-                                <p>${project.description}</p>
-                                <div class="project-tags">
-                                    ${project.tech.map(tech => `<span class="tag">${tech}</span>`).join('')}
-                                </div>
-                                <div class="project-links">
-                                    ${project.demo && project.demo !== '#' ? 
-                                        `<a href="${project.demo}" class="btn" target="_blank">Live Demo</a>` : 
-                                        `<button class="btn" disabled>Demo Coming Soon</button>`
-                                    }
-                                    ${project.github && project.github !== '#' ? 
-                                        `<a href="${project.github}" class="btn btn-secondary" target="_blank">GitHub</a>` : 
-                                        `<button class="btn btn-secondary" disabled>Code Private</button>`
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                }).join('');
-                
-                // Reinitialize project filtering after loading
-                initProjectFiltering();
-            } else {
-                projectsContainer.innerHTML = '<p>Failed to load projects. Please try again later.</p>';
-            }
-        }
-
-        // Load and display services
-        async function loadServices() {
-            const servicesData = await loadJSON('./data/services.json');
-            const servicesContainer = document.getElementById('services-container');
-            
-            if (servicesData && servicesContainer) {
-                servicesContainer.innerHTML = servicesData.map(service => `
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="${service.icon}"></i>
-                        </div>
-                        <h3>${service.title}</h3>
-                        <p>${service.description}</p>
-                    </div>
-                `).join('');
-            } else {
-                servicesContainer.innerHTML = '<p>Failed to load services. Please try again later.</p>';
-            }
-        }
-
-// Load and display blog posts
-async function loadBlog() {
-    const blogData = await loadJSON('./data/blog.json');
-    const blogContainer = document.getElementById('blog-container');
-    
-    if (blogData && blogContainer) {
-        blogContainer.innerHTML = blogData.map(post => {
-            // Create gradient colors based on post ID for consistency
-            const colors = [
-                'linear-gradient(135deg, #0A174E, #1e3a8a)',
-                'linear-gradient(135deg, #F5D042, #e6b800)',
-                'linear-gradient(135deg, #10b981, #059669)',
-                'linear-gradient(135deg, #8b5cf6, #7c3aed)',
-                'linear-gradient(135deg, #ec4899, #db2777)'
-            ];
-            const colorIndex = (post.id - 1) % colors.length;
-            
-            const imageContent = post.image && post.image !== '#' ? 
-                `<img src="${post.image}" alt="${post.title}" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);">` :
-                `<div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; background: ${colors[colorIndex]}; color: white; font-weight: 600; flex-direction: column; gap: 0.5rem;">
-                    <i class="fas fa-newspaper" style="font-size: 2.5rem;"></i>
-                    <span style="font-size: 0.9rem;">Blog Post</span>
-                </div>`;
-            
-            return `
-                <div class="blog-card" style="
-                    background: var(--card-bg);
-                    border-radius: 16px;
-                    overflow: hidden;
-                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-                    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-                    border: 1px solid var(--border-color);
-                    position: relative;
-                ">
-                    <div class="blog-image" style="
-                        width: 100%;
-                        height: 240px;
-                        overflow: hidden;
-                        position: relative;
-                    ">
-                        ${imageContent}
-                        <div style="
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            right: 0;
-                            bottom: 0;
-                            background: rgba(10, 23, 78, 0.8);
-                            opacity: 0;
-                            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-                        "></div>
-                    </div>
-                    <div class="blog-content" style="
-                        padding: 30px;
-                    ">
-                        <h3 style="
-                            font-size: 1.4rem;
-                            margin-bottom: 15px;
-                            color: var(--secondary-color);
-                            font-weight: 700;
-                            line-height: 1.4;
-                        ">${post.title}</h3>
-                        <div class="blog-meta" style="
-                            display: flex;
-                            gap: 20px;
-                            margin-bottom: 15px;
-                            font-size: 0.9rem;
-                            color: var(--text-light);
-                        ">
-                            <span style="display: flex; align-items: center; gap: 6px;">
-                                <i class="far fa-calendar"></i> ${new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-                            </span>
-                            <span style="display: flex; align-items: center; gap: 6px;">
-                                <i class="far fa-clock"></i> ${post.readTime}
-                            </span>
-                        </div>
-                        <p style="
-                            color: var(--text-light);
-                            line-height: 1.6;
-                            margin-bottom: 20px;
-                            font-size: 1rem;
-                        ">${post.excerpt}</p>
-                        <a href="blog.html?id=${post.id}" class="blog-link" style="
-                            display: inline-flex;
-                            align-items: center;
-                            gap: 8px;
-                            color: var(--accent-color);
-                            text-decoration: none;
-                            font-weight: 600;
-                            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-                            font-size: 1rem;
-                        ">
-                            Read More 
-                            <i class="fas fa-arrow-right" style="transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);"></i>
-                        </a>
-                    </div>
-                </div>
-            `;
-        }).join('');
-
-        // Add hover effects with JavaScript
-        const blogCards = blogContainer.querySelectorAll('.blog-card');
-        blogCards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-                this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.15)';
-                const imageOverlay = this.querySelector('.blog-image div');
-                if (imageOverlay) imageOverlay.style.opacity = '1';
-                const img = this.querySelector('.blog-image img');
-                if (img) img.style.transform = 'scale(1.1)';
-                const arrow = this.querySelector('.blog-link i');
-                if (arrow) arrow.style.transform = 'translateX(5px)';
-            });
-
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-                this.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
-                const imageOverlay = this.querySelector('.blog-image div');
-                if (imageOverlay) imageOverlay.style.opacity = '0';
-                const img = this.querySelector('.blog-image img');
-                if (img) img.style.transform = 'scale(1)';
-                const arrow = this.querySelector('.blog-link i');
-                if (arrow) arrow.style.transform = 'translateX(0)';
+        // Filter Logic for Index Page
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.project-card').forEach(project => {
+                    if (filter === 'all' || project.dataset.category === filter) {
+                        project.style.display = 'block';
+                    } else {
+                        project.style.display = 'none';
+                    }
+                });
             });
         });
 
-    } else {
-        blogContainer.innerHTML = '<p style="text-align: center; color: var(--text-light); font-size: 1.1rem;">Failed to load blog posts. Please try again later.</p>';
-    }
-}
-        // Initialize project filtering
-        function initProjectFiltering() {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const projectCards = document.querySelectorAll('.project-card');
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    // Add active class to clicked button
-                    button.classList.add('active');
-                    
-                    const filter = button.getAttribute('data-filter');
-                    
-                    projectCards.forEach(card => {
-                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        }
-
-        // Page Navigation
-        document.addEventListener('DOMContentLoaded', function() {
-            const pages = document.querySelectorAll('.page');
-            const navLinks = document.querySelectorAll('.nav-links a, .btn[data-page]');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const navLinksContainer = document.querySelector('.nav-links');
-            
-            // Load initial data
-            loadSkills();
-            
-            // Show home page by default
-            showPage('home');
-            
-            // Navigation click event
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const pageId = this.getAttribute('data-page');
-                    if (pageId) {
-                        showPage(pageId);
-                        
-                        // Update active nav link
-                        navLinks.forEach(navLink => navLink.classList.remove('active'));
-                        if (this.classList.contains('nav-links')) {
-                            this.classList.add('active');
-                        }
-                        
-                        // Load data for the page if needed
-                        if (pageId === 'about' && document.getElementById('about-bio').innerHTML.includes('spinner')) {
-                            loadAbout();
-                        } else if (pageId === 'projects' && document.getElementById('projects-container').innerHTML.includes('spinner')) {
-                            loadProjects();
-                        } else if (pageId === 'services' && document.getElementById('services-container').innerHTML.includes('spinner')) {
-                            loadServices();
-                        } else if (pageId === 'blog' && document.getElementById('blog-container').innerHTML.includes('spinner')) {
-                            loadBlog();
-                        }
-                    }
-                    
-                    // Close mobile menu if open
-                    if (window.innerWidth <= 768) {
-                        navLinksContainer.style.display = 'none';
-                    }
-                });
-            });
-            
-            // Mobile menu toggle
-            mobileMenu.addEventListener('click', function() {
-                if (navLinksContainer.style.display === 'flex') {
-                    navLinksContainer.style.display = 'none';
-                } else {
-                    navLinksContainer.style.display = 'flex';
-                    navLinksContainer.style.flexDirection = 'column';
-                    navLinksContainer.style.position = 'absolute';
-                    navLinksContainer.style.top = '70px';
-                    navLinksContainer.style.left = '0';
-                    navLinksContainer.style.width = '100%';
-                    navLinksContainer.style.backgroundColor = 'var(--bg-color)';
-                    navLinksContainer.style.padding = '20px';
-                    navLinksContainer.style.boxShadow = 'var(--shadow)';
-                }
-            });
-            
-            // Show specific page function
-            function showPage(pageId) {
-                pages.forEach(page => {
-                    page.classList.remove('active');
-                });
-                const targetPage = document.getElementById(pageId);
-                if (targetPage) {
-                    targetPage.classList.add('active');
-                    window.scrollTo(0, 0);
-                }
-            }
-            
-            // Dark/Light Mode Toggle
-            const themeToggle = document.getElementById('themeToggle');
-            const themeIcon = themeToggle.querySelector('i');
-
-            // Check for saved theme preference
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            if (savedTheme === 'dark') {
-                document.body.classList.add('dark-mode');
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
-            }
-
-            themeToggle.addEventListener('click', () => {
-                document.body.classList.toggle('dark-mode');
-                if (document.body.classList.contains('dark-mode')) {
-                    themeIcon.classList.remove('fa-moon');
-                    themeIcon.classList.add('fa-sun');
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    themeIcon.classList.remove('fa-sun');
-                    themeIcon.classList.add('fa-moon');
-                    localStorage.setItem('theme', 'light');
-                }
-            });
-
-            // Form Submission
-            const contactForm = document.getElementById('contactForm');
-            
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Thank you for your message! I will get back to you soon.');
-                contactForm.reset();
-            });
-
-            // GSAP Animations
-            gsap.registerPlugin(ScrollTrigger);
-
-            // Animate elements when they come into view
-            const animateOnScroll = (elements) => {
-                elements.forEach(el => {
-                    gsap.from(el, {
-                        scrollTrigger: {
-                            trigger: el,
-                            start: 'top 80%',
-                        },
-                        duration: 0.8,
-                        y: 50,
-                        opacity: 0,
-                        ease: 'power3.out'
-                    });
-                });
-            };
-
-            // Animate elements on page load
-            const animateOnLoad = (elements) => {
-                elements.forEach((el, index) => {
-                    gsap.from(el, {
-                        duration: 0.8,
-                        y: 30,
-                        opacity: 0,
-                        delay: index * 0.1,
-                        ease: 'power3.out'
-                    });
-                });
-            };
-
-            // Apply animations to various elements
-            window.addEventListener('load', () => {
-                // Home page animations
-                if (document.getElementById('home').classList.contains('active')) {
-                    animateOnLoad([
-                        '.hero-content h1',
-                        '.hero-content .hero-subtitle',
-                        '.hero-content p',
-                        '.hero-buttons',
-                        '.hero-image'
-                    ]);
-                }
-                
-                // Animate skill items
-                animateOnScroll(document.querySelectorAll('.skill-item'));
-                
-                // Animate project cards
-                animateOnScroll(document.querySelectorAll('.project-card'));
-                
-                // Animate service cards
-                animateOnScroll(document.querySelectorAll('.service-card'));
-                
-                // Animate blog cards
-                animateOnScroll(document.querySelectorAll('.blog-card'));
-            });
+        document.addEventListener('DOMContentLoaded', () => {
+            initTheme();
+            loadHomeContent();
         });
     </script>
 </body>
+
 </html>

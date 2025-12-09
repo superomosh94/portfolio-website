@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,15 +15,15 @@
             --accent-color: #f59e0b;
             --bg-color: #ffffff;
             --card-bg: #f8fafc;
-            --text-color: #334155;
-            --text-light: #64748b;
+            --text-color: #000000;
+            --text-light: #333333;
             --border-color: #e2e8f0;
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
         }
 
-        .dark-theme {
+        .dark-mode {
             --primary-color: #3b82f6;
             --primary-dark: #1d4ed8;
             --secondary-color: #94a3b8;
@@ -51,7 +52,7 @@
             transition: var(--transition);
         }
 
-        .dark-theme body {
+        .dark-mode body {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         }
 
@@ -229,14 +230,18 @@
         }
 
         /* Experience & Education Items */
-        .experience-item, .project-item, .education-item {
+        .experience-item,
+        .project-item,
+        .education-item {
             margin-bottom: 2rem;
             padding-bottom: 1.5rem;
             border-bottom: 1px solid var(--border-color);
             position: relative;
         }
 
-        .experience-item:last-child, .project-item:last-child, .education-item:last-child {
+        .experience-item:last-child,
+        .project-item:last-child,
+        .education-item:last-child {
             border-bottom: none;
             margin-bottom: 0;
             padding-bottom: 0;
@@ -472,27 +477,28 @@
                 background: white;
                 padding: 0;
             }
-            
+
             .portfolio-header {
                 display: none;
             }
-            
+
             .cv-container {
                 box-shadow: none;
                 border-radius: 0;
                 margin-top: 0;
             }
-            
+
             .cv-page {
                 margin-top: 0;
             }
-            
+
             .project-link {
                 color: #2563eb;
                 text-decoration: underline;
             }
-            
-            .theme-toggle, .mobile-menu {
+
+            .theme-toggle,
+            .mobile-menu {
                 display: none !important;
             }
         }
@@ -502,12 +508,12 @@
             body {
                 padding: 10px;
             }
-            
+
             .portfolio-header {
                 width: calc(100% - 20px);
                 top: 10px;
             }
-            
+
             .nav-links {
                 display: none;
                 position: absolute;
@@ -520,46 +526,46 @@
                 box-shadow: var(--shadow);
                 border-radius: 0 0 12px 12px;
             }
-            
+
             .nav-links.active {
                 display: flex;
             }
-            
+
             .mobile-menu {
                 display: block;
             }
-            
+
             .cv-header {
                 padding: 2rem 1rem;
             }
-            
+
             .cv-header h1 {
                 font-size: 2.2rem;
             }
-            
+
             .contact-info {
                 flex-direction: column;
                 align-items: center;
                 gap: 1rem;
             }
-            
+
             .cv-body {
                 padding: 1.5rem;
             }
-            
+
             .item-header {
                 flex-direction: column;
                 align-items: flex-start;
             }
-            
+
             .item-date {
                 margin-top: 0.5rem;
             }
-            
+
             .skills-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .project-links {
                 flex-direction: column;
             }
@@ -569,21 +575,22 @@
             .cv-header h1 {
                 font-size: 1.8rem;
             }
-            
+
             .cv-header .title {
                 font-size: 1.2rem;
             }
-            
+
             .portfolio-nav {
                 padding: 0.75rem 1rem;
             }
-            
+
             .nav-actions {
                 gap: 0.5rem;
             }
         }
     </style>
 </head>
+
 <body>
     <header class="portfolio-header">
         <nav class="portfolio-nav">
@@ -610,7 +617,7 @@
             </div>
         </nav>
     </header>
-    
+
     <div class="cv-page">
         <div class="cv-container">
             <header class="cv-header">
@@ -643,10 +650,14 @@
                 <section class="section">
                     <h2 class="section-title">PROFESSIONAL SUMMARY</h2>
                     <p class="summary">
-                        Passionate full-stack developer with 5+ years of experience building secure, scalable web applications. 
-                        Specialized in the MERN stack with expertise in Node.js, Express.js, and modern frontend technologies. 
-                        Proven track record of implementing robust authentication systems, optimizing performance, and delivering 
-                        user-centric solutions. Strong background in both relational and NoSQL databases with a focus on clean code 
+                        Passionate full-stack developer with 5+ years of experience building secure, scalable web
+                        applications.
+                        Specialized in the MERN stack with expertise in Node.js, Express.js, and modern frontend
+                        technologies.
+                        Proven track record of implementing robust authentication systems, optimizing performance, and
+                        delivering
+                        user-centric solutions. Strong background in both relational and NoSQL databases with a focus on
+                        clean code
                         and best practices.
                     </p>
                 </section>
@@ -704,7 +715,7 @@
                 <!-- Professional Experience -->
                 <section class="section">
                     <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
-                    
+
                     <div class="experience-item">
                         <div class="item-header">
                             <div>
@@ -713,18 +724,22 @@
                             </div>
                             <div class="item-date">2020 – Present</div>
                         </div>
-                        
+
                         <div class="project-item">
                             <div class="item-header">
                                 <h3 class="item-title">FinMate – Finance Management System</h3>
                                 <div class="item-date">2024</div>
                             </div>
                             <div class="item-description">
-                                <p>Developed a comprehensive finance tracking platform with secure authentication and advanced reporting capabilities.</p>
+                                <p>Developed a comprehensive finance tracking platform with secure authentication and
+                                    advanced reporting capabilities.</p>
                                 <ul>
-                                    <li>Engineered RESTful APIs using Express.js and MySQL for transaction management and budget analytics</li>
-                                    <li>Implemented secure password hashing with bcrypt and dynamic server-side rendering with EJS</li>
-                                    <li>Automated expense categorization and monthly financial reports, improving user efficiency by 40%</li>
+                                    <li>Engineered RESTful APIs using Express.js and MySQL for transaction management
+                                        and budget analytics</li>
+                                    <li>Implemented secure password hashing with bcrypt and dynamic server-side
+                                        rendering with EJS</li>
+                                    <li>Automated expense categorization and monthly financial reports, improving user
+                                        efficiency by 40%</li>
                                     <li>Integrated data validation and error handling for robust user experience</li>
                                 </ul>
                             </div>
@@ -740,7 +755,8 @@
                                     <i class="fas fa-external-link-alt"></i>
                                     Live Demo
                                 </a>
-                                <a href="https://github.com/superomosh94/FinMateV2" class="project-link" target="_blank">
+                                <a href="https://github.com/superomosh94/FinMateV2" class="project-link"
+                                    target="_blank">
                                     <i class="fab fa-github"></i>
                                     Source Code
                                 </a>
@@ -753,11 +769,15 @@
                                 <div class="item-date">2024</div>
                             </div>
                             <div class="item-description">
-                                <p>Built a collaborative learning platform supporting multi-role access control and comprehensive progress tracking.</p>
+                                <p>Built a collaborative learning platform supporting multi-role access control and
+                                    comprehensive progress tracking.</p>
                                 <ul>
-                                    <li>Architected modular Node.js backend with role-based access control for students, instructors, and admins</li>
-                                    <li>Designed relational database schema in MySQL to efficiently manage users, courses, and progress data</li>
-                                    <li>Implemented responsive frontend with EJS templating for optimal cross-device experience</li>
+                                    <li>Architected modular Node.js backend with role-based access control for students,
+                                        instructors, and admins</li>
+                                    <li>Designed relational database schema in MySQL to efficiently manage users,
+                                        courses, and progress data</li>
+                                    <li>Implemented responsive frontend with EJS templating for optimal cross-device
+                                        experience</li>
                                     <li>Developed real-time progress tracking and reporting dashboard</li>
                                 </ul>
                             </div>
@@ -785,7 +805,7 @@
                 <!-- Education -->
                 <section class="section">
                     <h2 class="section-title">EDUCATION & CERTIFICATIONS</h2>
-                    
+
                     <div class="education-item">
                         <div class="item-header">
                             <div>
@@ -795,8 +815,9 @@
                             <div class="item-date">2023 – Present</div>
                         </div>
                         <div class="education-details">
-                            <p><strong>Relevant Coursework:</strong> Data Structures & Algorithms, Database Systems, Computer Networks, 
-                            Software Engineering, Web Technologies, System Analysis & Design</p>
+                            <p><strong>Relevant Coursework:</strong> Data Structures & Algorithms, Database Systems,
+                                Computer Networks,
+                                Software Engineering, Web Technologies, System Analysis & Design</p>
                         </div>
                     </div>
 
@@ -809,8 +830,8 @@
                             <div class="item-date">2024 – 2025</div>
                         </div>
                         <div class="education-details">
-                            <p>Intensive program focusing on modern full-stack development methodologies, collaborative 
-                            development practices, and industry-standard deployment tools and techniques.</p>
+                            <p>Intensive program focusing on modern full-stack development methodologies, collaborative
+                                development practices, and industry-standard deployment tools and techniques.</p>
                         </div>
                     </div>
                 </section>
@@ -824,22 +845,22 @@
         const themeIcon = themeToggle.querySelector('i');
         const mobileMenu = document.getElementById('mobileMenu');
         const navLinks = document.querySelector('.nav-links');
-        
+
         // Check for saved theme preference or default to light
         const currentTheme = localStorage.getItem('theme') || 'light';
-        
+
         // Apply the saved theme
         if (currentTheme === 'dark') {
-            document.body.classList.add('dark-theme');
+            document.body.classList.add('dark-mode');
             themeIcon.classList.remove('fa-moon');
             themeIcon.classList.add('fa-sun');
         }
-        
+
         // Toggle theme function
         themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-theme');
-            
-            if (document.body.classList.contains('dark-theme')) {
+            document.body.classList.toggle('dark-mode');
+
+            if (document.body.classList.contains('dark-mode')) {
                 localStorage.setItem('theme', 'dark');
                 themeIcon.classList.remove('fa-moon');
                 themeIcon.classList.add('fa-sun');
@@ -863,4 +884,5 @@
         });
     </script>
 </body>
+
 </html>
