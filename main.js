@@ -64,4 +64,50 @@ gsap.from('.hero-image', {
 
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
+
+    // AJAX Form Handling for Homepage
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            const nameInput = document.getElementById('name');
+            const name = nameInput ? nameInput.value : 'Visitor';
+
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(contactForm);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+                .then(async (response) => {
+                    if (response.status == 200) {
+                        alert(`Thank you ${name}! Your message has been received. I will get back to you shortly.`);
+                        contactForm.reset();
+                    } else {
+                        alert('Something went wrong. Please try again later.');
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    alert('Something went wrong. Please check your internet connection.');
+                })
+                .finally(() => {
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                });
+        });
+    }
 });
