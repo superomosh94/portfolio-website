@@ -7,8 +7,8 @@ const structuredData = {
         "@type": "Person",
         "name": "Martin Omondo",
         "jobTitle": "Full-Stack Web Developer",
-        "url": "https://martinomondo.com",
-        "image": "https://martinomondo.com/resource/workspace.png",
+        "url": "https://martin-navy.vercel.app",
+        "image": "https://martin-navy.vercel.app/resource/workspace.png",
         "sameAs": [
             "https://github.com/superomosh94",
             "https://linkedin.com/in/martin-omondo",
@@ -39,13 +39,13 @@ const structuredData = {
         "@type": "WebSite",
         "name": "Martin Omondo Portfolio",
         "alternateName": "Martin O - Full-Stack Developer",
-        "url": "https://martinomondo.com",
+        "url": "https://martin-navy.vercel.app",
         "description": "Professional portfolio showcasing web development projects and expertise in Node.js, Express, and full-stack development",
         "potentialAction": {
             "@type": "SearchAction",
             "target": {
                 "@type": "EntryPoint",
-                "urlTemplate": "https://martinomondo.com/projects.html?search={search_term_string}"
+                "urlTemplate": "https://martin-navy.vercel.app/projects.html?search={search_term_string}"
             },
             "query-input": "required name=search_term_string"
         }
@@ -55,7 +55,7 @@ const structuredData = {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "Martin Omondo Web Development Services",
-        "image": "https://martinomondo.com/resource/workspace.png",
+        "image": "https://martin-navy.vercel.app/resource/workspace.png",
         "description": "Professional web development services including full-stack development, API development, database design, and technical consulting",
         "priceRange": "$$",
         "address": {
@@ -67,7 +67,7 @@ const structuredData = {
             "latitude": "-1.2921",
             "longitude": "36.8219"
         },
-        "url": "https://martinomondo.com",
+        "url": "https://martin-navy.vercel.app",
         "telephone": "+254-XXX-XXXXXX",
         "email": "omondo94@gmail.com",
         "openingHoursSpecification": {
@@ -95,7 +95,7 @@ const structuredData = {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://martinomondo.com/"
+            "item": "https://martin-navy.vercel.app/"
         }]
     },
 
@@ -158,17 +158,17 @@ function getBreadcrumb(page) {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://martinomondo.com/"
+                "item": "https://martin-navy.vercel.app/"
             }
         ]
     };
 
     const pageMap = {
-        'about': { name: 'About', url: 'https://martinomondo.com/about.html' },
-        'projects': { name: 'Projects', url: 'https://martinomondo.com/projects.html' },
-        'services': { name: 'Services', url: 'https://martinomondo.com/services.html' },
-        'contact': { name: 'Contact', url: 'https://martinomondo.com/contact.html' },
-        'blog': { name: 'Blog', url: 'https://martinomondo.com/blog.html' }
+        'about': { name: 'About', url: 'https://martin-navy.vercel.app/about.html' },
+        'projects': { name: 'Projects', url: 'https://martin-navy.vercel.app/projects.html' },
+        'services': { name: 'Services', url: 'https://martin-navy.vercel.app/services.html' },
+        'contact': { name: 'Contact', url: 'https://martin-navy.vercel.app/contact.html' },
+        'blog': { name: 'Blog', url: 'https://martin-navy.vercel.app/blog.html' }
     };
 
     if (pageMap[page]) {
