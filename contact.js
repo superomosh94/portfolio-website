@@ -29,11 +29,8 @@ function toggleMobileNav() {
 mobileMenu.addEventListener('click', toggleMobileNav);
 mobileNavOverlay.addEventListener('click', toggleMobileNav);
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Thank you for your message! I will get back to you soon.');
-    contactForm.reset();
-});
+// Form submission is handled natively by Web3Forms in the HTML action
+// contactForm.addEventListener('submit', (e) => { ... });
 
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
