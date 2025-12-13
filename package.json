@@ -2,9 +2,8 @@
     "name": "martin-omondo-portfolio",
     "version": "1.0.0",
     "description": "Professional Portfolio Website for Martin Omondo - Full-Stack Developer",
-    "main": "index.html",
     "scripts": {
-        "start": "node server.js",
+        "start": "npx http-server . -o -c-1",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
@@ -16,13 +15,5 @@
     ],
     "author": "Martin Omondo",
     "license": "ISC",
-    "dependencies": {
-        "bcrypt": "^6.0.0",
-        "body-parser": "^2.2.1",
-        "connect-flash": "^0.1.1",
-        "ejs": "^3.1.10",
-        "express": "^5.2.1",
-        "express-session": "^1.18.2",
-        "http-server": "^14.1.1"
-    }
+    "dependencies": {}
 }
