@@ -1,0 +1,193 @@
+﻿{
+    "projects":  [
+                     {
+                         "id":  1,
+                         "title":  "FinMate - Finance Management System",
+                         "category":  "finance",
+                         "description":  "Full-stack finance tracking system with user authentication, transaction management, and financial reporting.",
+                         "image":  "./resource/image.png",
+                         "tech":  [
+                                      "Express",
+                                      "EJS",
+                                      "MySQL",
+                                      "bcrypt"
+                                  ],
+                         "github":  "https://github.com/superomosh94/FinMateV2",
+                         "demo":  "https://finmatev2.onrender.com"
+                     },
+                     {
+                         "id":  2,
+                         "title":  "EduLMS - Learning Management System",
+                         "category":  "web",
+                         "description":  "Collaborative learning platform with course management, user roles, and progress tracking.",
+                         "image":  "./resource/edulms.png",
+                         "tech":  [
+                                      "Node.js",
+                                      "EJS",
+                                      "MySQL",
+                                      "bcrypt"
+                                  ],
+                         "github":  "https://github.com/superomosh94/edu-lms",
+                         "demo":  "https://edu-lms-zeqh.onrender.com"
+                     },
+                     {
+                         "id":  3,
+                         "title":  "Devvoxa",
+                         "category":  "web",
+                         "description":  "Professional web development brand website offering tailored single-page and multi-page designs for businesses, with pricing in USD and KES.",
+                         "image":  "./resource/devoxxa.png",
+                         "tech":  [
+                                      "HTML",
+                                      "CSS",
+                                      "JavaScript",
+                                      "Vercel"
+                                  ],
+                         "github":  "https://github.com/superomosh94/Devvoxa",
+                         "demo":  "https://devvoxa.vercel.app/"
+                     },
+                     {
+                         "id":  4,
+                         "title":  "Star-Net Kenya",
+                         "category":  "web",
+                         "description":  "Static web app showcasing data, minutes, and SMS bundles with a responsive design and simulated M-Pesa purchase flow.",
+                         "image":  "./resource/starnet.png",
+                         "tech":  [
+                                      "HTML",
+                                      "CSS",
+                                      "JavaScript",
+                                      "Vercel"
+                                  ],
+                         "github":  "https://github.com/superomosh94/Data",
+                         "demo":  "https://data-green-nine.vercel.app/"
+                     },
+                     {
+                         "title":  "",
+                         "category":  "",
+                         "description":  "",
+                         "image":  "",
+                         "tech":  [
+
+                                  ],
+                         "github":  "",
+                         "demo":  "",
+                         "id":  1765608888484
+                     }
+                 ],
+    "services":  [
+                     {
+                         "icon":  "fas fa-code",
+                         "title":  "Full-Stack Web Development",
+                         "description":  "End-to-end web application development using modern technologies like Node.js, Express, and React. Building scalable, secure, and high-performance solutions tailored to your business needs."
+                     },
+                     {
+                         "icon":  "fas fa-server",
+                         "title":  "Backend \u0026 API Architecture",
+                         "description":  "Designing robust RESTful APIs and server-side logic. Expertise in database design (MySQL, MongoDB) and implementing secure authentication systems (JWT, OAuth)."
+                     },
+                     {
+                         "icon":  "fas fa-mobile-alt",
+                         "title":  "Responsive UI/UX Design",
+                         "description":  "Creating engaging, mobile-first interfaces that provide seamless user experiences across all devices. Focusing on accessibility, performance, and modern design principles."
+                     },
+                     {
+                         "icon":  "fas fa-chart-line",
+                         "title":  "Technical Consulting \u0026 SEO",
+                         "description":  "Providing technical guidance on software architecture, code quality, and performance optimization. Implementing SEO best practices to improve search engine visibility."
+                     }
+                 ],
+    "about":  {
+                  "name":  "Martin O",
+                  "role":  "Full-Stack Developer specializing in Node.js, Express \u0026 Secure Web Applications",
+                  "heroDescription":  "Professional web developer with 5+ years of experience building scalable, secure web applications using modern JavaScript technologies. Expert in Node.js, Express.js, MySQL, MongoDB, and RESTful API development.",
+                  "profileImage":  "./resource/profile/image.png",
+                  "bio":  "I\u0027m a passionate full-stack web developer with over 2 years of experience building robust web applications. My expertise lies in creating secure, scalable solutions using modern technologies. I specialize in Express.js, EJS templating, and implementing secure authentication systems with bcrypt. I believe in writing clean, maintainable code and following best practices for web development. When I\u0027m not coding, I enjoy contributing to open-source projects, writing technical blogs, and exploring new technologies in the web development ecosystem.",
+                  "skills":  [
+                                 {
+                                     "icon":  "fab fa-node-js",
+                                     "title":  "Node.js \u0026 Express",
+                                     "description":  "Building scalable backend services and RESTful APIs"
+                                 },
+                                 {
+                                     "icon":  "fas fa-database",
+                                     "title":  "Database Management",
+                                     "description":  "Designing schemas with MySQL and MongoDB"
+                                 },
+                                 {
+                                     "icon":  "fab fa-js",
+                                     "title":  "Modern JavaScript",
+                                     "description":  "ES6+, Async/Await, and modular coding patterns"
+                                 },
+                                 {
+                                     "icon":  "fas fa-shield-alt",
+                                     "title":  "Web Security",
+                                     "description":  "Implementing authentication, authorization, and data encryption"
+                                 }
+                             ]
+              },
+    "skillsDetailed":  [
+                           {
+                               "icon":  "fab fa-node-js",
+                               "title":  "Backend Development",
+                               "description":  "Expert in Node.js runtime and Express framework for building efficient server-side applications."
+                           },
+                           {
+                               "icon":  "fas fa-database",
+                               "title":  "Database Design",
+                               "description":  "Proficient in SQL (MySQL) and NoSQL (MongoDB) database architecture and query optimization."
+                           },
+                           {
+                               "icon":  "fab fa-html5",
+                               "title":  "Frontend Technologies",
+                               "description":  "Strong command of HTML5, CSS3, JavaScript (ES6+), and EJS templating engine."
+                           },
+                           {
+                               "icon":  "fas fa-tools",
+                               "title":  "DevOps \u0026 Tools",
+                               "description":  "Experience with Git version control, Docker basics, and deployment platforms like Render."
+                           }
+                       ],
+    "blog":  [
+                 {
+                     "id":  1,
+                     "title":  "Building Secure Authentication with Node.js",
+                     "excerpt":  "Learn how to implement robust user authentication using bcrypt and sessions in your Express applications.",
+                     "date":  "2024-03-15",
+                     "readTime":  "5 min read",
+                     "tags":  [
+                                  "Node.js",
+                                  "Security",
+                                  "Auth"
+                              ],
+                     "image":  "./resource/blog/security-authentication-bcrypt.jpeg",
+                     "content":  "\u003cp\u003eSecurity is paramount in modern web applications...\u003c/p\u003e"
+                 },
+                 {
+                     "id":  2,
+                     "title":  "Mastering EJS Templating",
+                     "excerpt":  "A comprehensive guide to using Embedded JavaScript templates for dynamic server-side rendering.",
+                     "date":  "2024-03-10",
+                     "readTime":  "4 min read",
+                     "tags":  [
+                                  "EJS",
+                                  "Frontend",
+                                  "Express"
+                              ],
+                     "image":  "./resource/blog/ejs-templating-guide.jpeg",
+                     "content":  "\u003cp\u003eEJS is a simple templating language that lets you generate HTML markup with plain JavaScript...\u003c/p\u003e"
+                 },
+                 {
+                     "id":  3,
+                     "title":  "RESTful API Best Practices",
+                     "excerpt":  "Key principles for designing scalable and maintainable REST APIs with Node.js and Express.",
+                     "date":  "2024-03-05",
+                     "readTime":  "6 min read",
+                     "tags":  [
+                                  "API",
+                                  "Backend",
+                                  "Best Practices"
+                              ],
+                     "image":  "./resource/blog/restful-api-nodejs.jpeg",
+                     "content":  "\u003cp\u003eDesigning a RESTful API requires careful consideration...\u003c/p\u003e"
+                 }
+             ]
+}

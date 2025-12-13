@@ -15,11 +15,11 @@
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://martinomondo.com/">
+    <meta property="og:url" content="https://martin-navy.vercel.app/">
     <meta property="og:title" content="Martin Omondo - Full-Stack Developer">
     <meta property="og:description"
         content="Full-Stack Web Developer specializing in Node.js, Express, and secure web applications. View my portfolio and projects.">
-    <meta property="og:image" content="https://martinomondo.com/resource/workspace.png">
+    <meta property="og:image" content="https://martin-navy.vercel.app/resource/workspace.png">
     <meta property="og:site_name" content="Martin Omondo Portfolio">
 
     <!-- Twitter Card Meta Tags -->
@@ -27,7 +27,7 @@
     <meta name="twitter:title" content="Martin Omondo - Full-Stack Developer">
     <meta name="twitter:description"
         content="Full-Stack Web Developer specializing in Node.js, Express, and secure web applications.">
-    <meta name="twitter:image" content="https://martinomondo.com/resource/workspace.png">
+    <meta name="twitter:image" content="https://martin-navy.vercel.app/resource/workspace.png">
 
     <!-- Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -35,13 +35,13 @@
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://martinomondo.com/">
+    <link rel="canonical" href="https://martin-navy.vercel.app/">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="public/favicon/favicon.ico">
 
     <!-- External Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="public/styles.css">
 
     <!-- Font Awesome with SRI -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -49,15 +49,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <!-- GSAP with SRI -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
-        integrity="sha512-ov7JSTa3s8t8rgmfj1g0C+jF6V8s0/dQSbXCo2/1tKs3B4dG5n6pbUH2zNiT5vC5z+n0h/xCnR6O6b3HmkpvA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"
-        integrity="sha512-pqQvVLHy8JvZ2v7aI5r7+e1jq+cJz1eoF7D5r6LzOvC6W9N3tFyE0X2GGvDmKFvCYRvMukJ3Lv1Y1bWqxs+R7Q=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"
-        integrity="sha512-C6C+F0hJP5KFrVAY9eB6vIgN18tFWe3VmAFWZ3kRUdE1aeG2SnWwHwWKGxUNp7xCv3nJLW5R7wP0cJ8zD8xJNg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- GSAP with SRI -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
 </head>
 
 <body>
@@ -68,14 +63,14 @@
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo" data-page="home">Martin O</a>
+                <a href="index.html" class="logo">Martin O</a>
                 <div class="nav-links" id="navLinks">
-                    <a href="#" class="active" data-page="home">Home</a>
-                    <a href="#" data-page="about">About</a>
-                    <a href="#" data-page="projects">Projects</a>
-                    <a href="#" data-page="services">Services</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="#" data-page="contact">Contact</a>
+                    <a href="index.html" class="active">Home</a>
+                    <a href="public/about.html">About</a>
+                    <a href="public/projects.html">Projects</a>
+                    <a href="public/services.html">Services</a>
+                    <a href="public/blog.html">Blog</a>
+                    <a href="public/contact.html">Contact</a>
                 </div>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
                     <i class="fas fa-moon"></i>
@@ -97,15 +92,15 @@
                         <i class="fas fa-hand-wave"></i>
                         Available for work
                     </div>
-                    <h1>Hi, I'm <span class="highlight">Martin Omondo</span></h1>
-                    <p class="hero-subtitle">Full-Stack Developer specializing in building secure, scalable web
-                        applications</p>
+                    <h1>Hi, I'm <span class="highlight" id="heroName">Loading...</span></h1>
+                    <h2 class="hero-subtitle" id="heroRole">Loading...</h2>
+                    <p id="heroDescription">Loading...</p>
                     <div class="hero-buttons">
-                        <a href="#" class="btn" data-page="contact">
+                        <a href="public/contact.html" class="btn">
                             <i class="fas fa-envelope"></i>
                             Get In Touch
                         </a>
-                        <a href="./resource/resume/martin-resume.pdf" class="btn btn-secondary" target="_blank">
+                        <a href="public/resource/resume/martin-resume.pdf" class="btn btn-secondary" target="_blank">
                             <i class="fas fa-download"></i>
                             Download Resume
                         </a>
@@ -115,8 +110,8 @@
                     <div class="hero-visual">
                         <div class="blob blob-1"></div>
                         <div class="blob blob-2"></div>
-                        <div class="profile-img" role="img" aria-label="Martin Omondo - Full-Stack Developer">
-                            <span>MO</span>
+                        <div class="profile-img" id="profileImage" role="img" aria-label="Profile Picture">
+                            <span id="profileInitials">MO</span>
                         </div>
                     </div>
                 </div>
@@ -226,7 +221,9 @@
                     <p class="section-description">Let's discuss your project or opportunity</p>
                 </div>
 
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="8d3ad73c-3739-46a1-b595-a8d084d80011">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
@@ -275,12 +272,154 @@
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
-            <p class="copyright">&copy; 2025 Martin Omondo. All Rights Reserved.</p>
+            <p class="copyright">&copy; 2025 Martin Omondo. All Rights Reserved. <a href="public/admin/admin.html"
+                    aria-label="Admin Panel"
+                    style="text-decoration: none; color: inherit; opacity: 0.1; font-size: 1rem; margin-left: 10px;"><i
+                        class="fas fa-user-circle"></i></a></p>
         </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="main.js"></script>
+    <script src="public/data/data.js"></script>
+    <script src="public/main.js"></script>
+    <script src="public/seo-schema.js"></script>
+    <script>
+        // Add admin link to navigation on mobile
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check if admin link doesn't exist
+            if (!document.querySelector('[href="/admin"]')) {
+                const navLinks = document.getElementById('navLinks');
+                if (navLinks) {
+                    const adminLink = document.createElement('a');
+                    adminLink.href = 'public/admin/admin.html';
+                    adminLink.className = 'admin-link';
+                    adminLink.style.cssText = 'color: #999; font-size: 12px; text-decoration: none; opacity: 0.5;';
+                    adminLink.title = 'Admin Panel';
+                    adminLink.innerHTML = '<i class="fas fa-user-circle"></i>';
+                    navLinks.appendChild(adminLink);
+                }
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof injectStructuredData === 'function') {
+                injectStructuredData('home');
+            }
+        });
+
+        function loadHomeContent() {
+            // Load Hero Content
+            const heroName = document.getElementById('heroName');
+            const heroRole = document.getElementById('heroRole');
+            const heroDescription = document.getElementById('heroDescription');
+            const profileImage = document.getElementById('profileImage');
+            const profileInitials = document.getElementById('profileInitials');
+
+            if (window.portfolioData && window.portfolioData.about) {
+                const about = window.portfolioData.about;
+
+                // Set hero text content
+                if (heroName) heroName.textContent = about.name || 'Your Name';
+                if (heroRole) heroRole.textContent = about.role || 'Your Role';
+                if (heroDescription) heroDescription.textContent = about.heroDescription || 'Your description';
+
+                // Set profile image or initials
+                if (profileImage && about.profileImage && about.profileImage.trim() !== '') {
+                    // Clear existing content
+                    profileImage.innerHTML = '';
+                    // Create and add image element
+                    const img = document.createElement('img');
+                    img.src = about.profileImage;
+                    img.alt = about.name || 'Profile Picture';
+                    img.onerror = function () {
+                        // Fallback to initials if image fails to load
+                        profileImage.innerHTML = `<span id="profileInitials">${getInitials(about.name)}</span>`;
+                    };
+                    profileImage.appendChild(img);
+                } else if (profileInitials && about.name) {
+                    // Show initials
+                    profileInitials.textContent = getInitials(about.name);
+                }
+            }
+
+            // Helper function to get initials from name
+            function getInitials(name) {
+                if (!name) return 'UN';
+                const parts = name.trim().split(' ');
+                if (parts.length >= 2) {
+                    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+                }
+                return name.substring(0, 2).toUpperCase();
+            }
+
+            // Load Projects
+            const projectsGrid = document.getElementById('projectsGrid');
+            if (projectsGrid) {
+                const projects = window.portfolioData.projects;
+                projectsGrid.innerHTML = projects.map(project => `
+                    <div class="project-card" data-category="${project.category}">
+                        <div class="project-img">
+                            <img src="${project.image}" alt="${project.title} - ${project.description}" onerror="this.src='https://via.placeholder.com/400x300?text=Project+Image'">
+                        </div>
+                        <div class="project-info">
+                            <h3>${project.title}</h3>
+                            <p>${project.description}</p>
+                            <div class="project-tags">
+                                ${project.tech.map(t => `<span class="tag">${t}</span>`).join('')}
+                            </div>
+                            <div class="project-links">
+                                ${project.github ? `<a href="${project.github}" class="btn btn-secondary" target="_blank"><i class="fab fa-github"></i> Code</a>` : ''}
+                                ${project.demo ? `<a href="${project.demo}" class="btn" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Load Services
+            const servicesGrid = document.getElementById('servicesGrid');
+            if (servicesGrid) {
+                const services = window.portfolioData.services;
+                servicesGrid.innerHTML = services.map(service => `
+                    <div class="service-card">
+                        <div class="service-icon"><i class="${service.icon}"></i></div>
+                        <h3>${service.title}</h3>
+                        <p>${service.description}</p>
+                    </div>
+                `).join('');
+            }
+
+            // Load Skills
+            const skillsContainer = document.getElementById('skillsContainer');
+            if (skillsContainer) {
+                const skills = window.portfolioData.skillsDetailed;
+                skillsContainer.innerHTML = skills.map(skill => `
+                    <div class="skill-item">
+                        <i class="${skill.icon}"></i>
+                        <h4>${skill.title}</h4>
+                        <p>${skill.description}</p>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Filter Logic for Index Page
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.project-card').forEach(project => {
+                    if (filter === 'all' || project.dataset.category === filter) {
+                        project.style.display = 'block';
+                    } else {
+                        project.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
