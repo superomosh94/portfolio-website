@@ -92,12 +92,9 @@
                         <i class="fas fa-hand-wave"></i>
                         Available for work
                     </div>
-                    <h1>Hi, I'm <span class="highlight">Martin Omondo</span></h1>
-                    <h2 class="hero-subtitle">Full-Stack Developer specializing in Node.js, Express & Secure Web
-                        Applications</h2>
-                    <p>Professional web developer with 5+ years of experience building scalable, secure web applications
-                        using modern JavaScript technologies. Expert in Node.js, Express.js, MySQL, MongoDB, and RESTful
-                        API development.</p>
+                    <h1>Hi, I'm <span class="highlight" id="heroName">Loading...</span></h1>
+                    <h2 class="hero-subtitle" id="heroRole">Loading...</h2>
+                    <p id="heroDescription">Loading...</p>
                     <div class="hero-buttons">
                         <a href="contact.html" class="btn">
                             <i class="fas fa-envelope"></i>
@@ -113,8 +110,8 @@
                     <div class="hero-visual">
                         <div class="blob blob-1"></div>
                         <div class="blob blob-2"></div>
-                        <div class="profile-img" role="img" aria-label="Martin Omondo - Full-Stack Developer">
-                            <span>MO</span>
+                        <div class="profile-img" id="profileImage" role="img" aria-label="Profile Picture">
+                            <span id="profileInitials">MO</span>
                         </div>
                     </div>
                 </div>
@@ -275,11 +272,15 @@
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
-            <p class="copyright">&copy; 2025 Martin Omondo. All Rights Reserved.</p>
+            <p class="copyright">&copy; 2025 Martin Omondo. All Rights Reserved. <a href="/admin"
+                    aria-label="Admin Login"
+                    style="text-decoration: none; color: inherit; opacity: 0.1; font-size: 1rem; margin-left: 10px;"><i
+                        class="fas fa-user-circle"></i></a></p>
         </div>
     </footer>
 
     <!-- JavaScript -->
+    <script src="data.js"></script>
     <script src="main.js"></script>
     <script src="seo-schema.js"></script>
     <script>
@@ -289,129 +290,51 @@
             }
         });
 
-        // 1. INLINED DATA (Subset for Home)
-        window.portfolioData = {
-            projects: [
-                {
-                    "id": 1,
-                    "title": "FinMate - Finance Management System",
-                    "category": "finance",
-                    "description": "Full-stack finance tracking system with user authentication, transaction management, and financial reporting.",
-                    "image": "./resource/image.png",
-                    "tech": ["Express", "EJS", "MySQL", "bcrypt"],
-                    "github": "https://github.com/superomosh94/FinMateV2",
-                    "demo": "https://finmatev2.onrender.com"
-                },
-                {
-                    "id": 2,
-                    "title": "EduLMS - Learning Management System",
-                    "category": "web",
-                    "description": "Collaborative learning platform with course management, user roles, and progress tracking.",
-                    "image": "./resource/edulms.png",
-                    "tech": ["Node.js", "EJS", "MySQL", "bcrypt"],
-                    "github": "https://github.com/superomosh94/edu-lms",
-                    "demo": "https://edu-lms-zeqh.onrender.com"
-                },
-                {
-                    "id": 3,
-                    "title": "Devvoxa",
-                    "category": "web",
-                    "description": "Professional web development brand website offering tailored single-page and multi-page designs for businesses, with pricing in USD and KES.",
-                    "image": "./resource/devoxxa.png",
-                    "tech": ["HTML", "CSS", "JavaScript", "Vercel"],
-                    "github": "https://github.com/superomosh94/Devvoxa",
-                    "demo": "https://devvoxa.vercel.app/"
-                },
-                {
-                    "id": 4,
-                    "title": "Star-Net Kenya",
-                    "category": "web",
-                    "description": "Static web app showcasing data, minutes, and SMS bundles with a responsive design and simulated M-Pesa purchase flow.",
-                    "image": "./resource/starnet.png",
-                    "tech": ["HTML", "CSS", "JavaScript", "Vercel"],
-                    "github": "https://github.com/superomosh94/Data",
-                    "demo": "https://data-green-nine.vercel.app/"
-                }
-            ],
-            services: [
-                {
-                    "icon": "fas fa-code",
-                    "title": "Full-Stack Web Development",
-                    "description": "End-to-end web application development using modern technologies like Node.js, Express, and React."
-                },
-                {
-                    "icon": "fas fa-server",
-                    "title": "Backend & API Architecture",
-                    "description": "Designing robust RESTful APIs and server-side logic. Expertise in database design (MySQL, MongoDB)."
-                },
-                {
-                    "icon": "fas fa-mobile-alt",
-                    "title": "Responsive UI/UX Design",
-                    "description": "Creating engaging, mobile-first interfaces that provide seamless user experiences across all devices."
-                },
-                {
-                    "icon": "fas fa-chart-line",
-                    "title": "Technical Consulting & SEO",
-                    "description": "Providing technical guidance on software architecture and implementing SEO best practices."
-                }
-            ],
-            skillsDetailed: [
-                {
-                    "icon": "fab fa-node-js",
-                    "title": "Backend Development",
-                    "description": "Expert in Node.js runtime and Express framework."
-                },
-                {
-                    "icon": "fas fa-database",
-                    "title": "Database Design",
-                    "description": "Proficient in SQL (MySQL) and NoSQL (MongoDB)."
-                },
-                {
-                    "icon": "fab fa-html5",
-                    "title": "Frontend Technologies",
-                    "description": "Strong command of HTML5, CSS3, JavaScript (ES6+)."
-                },
-                {
-                    "icon": "fas fa-tools",
-                    "title": "DevOps & Tools",
-                    "description": "Experience with Git, Docker, and deployment."
-                }
-            ]
-        };
-
-        // 2. INLINED LOGIC
-        const themeToggle = document.getElementById('themeToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const navLinks = document.getElementById('navLinks');
-        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-
-        function initTheme() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.body.classList.add('dark-mode');
-                if (themeToggle) themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            }
-        }
-
-        if (themeToggle) {
-            themeToggle.addEventListener('click', () => {
-                document.body.classList.toggle('dark-mode');
-                const isDark = document.body.classList.contains('dark-mode');
-                themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-                localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            });
-        }
-
-        function toggleMobileNav() {
-            if (navLinks) navLinks.classList.toggle('active');
-            if (mobileNavOverlay) mobileNavOverlay.classList.toggle('active');
-            document.body.style.overflow = navLinks && navLinks.classList.contains('active') ? 'hidden' : '';
-        }
-
-        if (mobileMenu) mobileMenu.addEventListener('click', toggleMobileNav);
-        if (mobileNavOverlay) mobileNavOverlay.addEventListener('click', toggleMobileNav);
-
         function loadHomeContent() {
+            // Load Hero Content
+            const heroName = document.getElementById('heroName');
+            const heroRole = document.getElementById('heroRole');
+            const heroDescription = document.getElementById('heroDescription');
+            const profileImage = document.getElementById('profileImage');
+            const profileInitials = document.getElementById('profileInitials');
+
+            if (window.portfolioData && window.portfolioData.about) {
+                const about = window.portfolioData.about;
+
+                // Set hero text content
+                if (heroName) heroName.textContent = about.name || 'Your Name';
+                if (heroRole) heroRole.textContent = about.role || 'Your Role';
+                if (heroDescription) heroDescription.textContent = about.heroDescription || 'Your description';
+
+                // Set profile image or initials
+                if (profileImage && about.profileImage && about.profileImage.trim() !== '') {
+                    // Clear existing content
+                    profileImage.innerHTML = '';
+                    // Create and add image element
+                    const img = document.createElement('img');
+                    img.src = about.profileImage;
+                    img.alt = about.name || 'Profile Picture';
+                    img.onerror = function () {
+                        // Fallback to initials if image fails to load
+                        profileImage.innerHTML = `<span id="profileInitials">${getInitials(about.name)}</span>`;
+                    };
+                    profileImage.appendChild(img);
+                } else if (profileInitials && about.name) {
+                    // Show initials
+                    profileInitials.textContent = getInitials(about.name);
+                }
+            }
+
+            // Helper function to get initials from name
+            function getInitials(name) {
+                if (!name) return 'UN';
+                const parts = name.trim().split(' ');
+                if (parts.length >= 2) {
+                    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+                }
+                return name.substring(0, 2).toUpperCase();
+            }
+
             // Load Projects
             const projectsGrid = document.getElementById('projectsGrid');
             if (projectsGrid) {
@@ -477,11 +400,6 @@
                     }
                 });
             });
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            initTheme();
-            loadHomeContent();
         });
     </script>
 </body>

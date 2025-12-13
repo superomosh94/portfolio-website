@@ -1,16 +1,17 @@
-// Data Data for Portfolio Website
-// This replaces relative JSON fetching to ensure robust loading on all environments
-
-const portfolioData = {
-    // PROJECTS DATA
-    projects: [
+{
+    "projects": [
         {
             "id": 1,
             "title": "FinMate - Finance Management System",
             "category": "finance",
             "description": "Full-stack finance tracking system with user authentication, transaction management, and financial reporting.",
             "image": "./resource/image.png",
-            "tech": ["Express", "EJS", "MySQL", "bcrypt"],
+            "tech": [
+                "Express",
+                "EJS",
+                "MySQL",
+                "bcrypt"
+            ],
             "github": "https://github.com/superomosh94/FinMateV2",
             "demo": "https://finmatev2.onrender.com"
         },
@@ -20,7 +21,12 @@ const portfolioData = {
             "category": "web",
             "description": "Collaborative learning platform with course management, user roles, and progress tracking.",
             "image": "./resource/edulms.png",
-            "tech": ["Node.js", "EJS", "MySQL", "bcrypt"],
+            "tech": [
+                "Node.js",
+                "EJS",
+                "MySQL",
+                "bcrypt"
+            ],
             "github": "https://github.com/superomosh94/edu-lms",
             "demo": "https://edu-lms-zeqh.onrender.com"
         },
@@ -30,7 +36,12 @@ const portfolioData = {
             "category": "web",
             "description": "Professional web development brand website offering tailored single-page and multi-page designs for businesses, with pricing in USD and KES.",
             "image": "./resource/devoxxa.png",
-            "tech": ["HTML", "CSS", "JavaScript", "Vercel"],
+            "tech": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Vercel"
+            ],
             "github": "https://github.com/superomosh94/Devvoxa",
             "demo": "https://devvoxa.vercel.app/"
         },
@@ -40,14 +51,27 @@ const portfolioData = {
             "category": "web",
             "description": "Static web app showcasing data, minutes, and SMS bundles with a responsive design and simulated M-Pesa purchase flow.",
             "image": "./resource/starnet.png",
-            "tech": ["HTML", "CSS", "JavaScript", "Vercel"],
+            "tech": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Vercel"
+            ],
             "github": "https://github.com/superomosh94/Data",
             "demo": "https://data-green-nine.vercel.app/"
+        },
+        {
+            "title": "",
+            "category": "",
+            "description": "",
+            "image": "",
+            "tech": [],
+            "github": "",
+            "demo": "",
+            "id": 1765608888484
         }
     ],
-
-    // SERVICES DATA
-    services: [
+    "services": [
         {
             "icon": "fas fa-code",
             "title": "Full-Stack Web Development",
@@ -69,9 +93,11 @@ const portfolioData = {
             "description": "Providing technical guidance on software architecture, code quality, and performance optimization. Implementing SEO best practices to improve search engine visibility."
         }
     ],
-
-    // ABOUT DATA
-    about: {
+    "about": {
+        "name": "Martin O",
+        "role": "Full-Stack Developer specializing in Node.js, Express & Secure Web Applications",
+        "heroDescription": "Professional web developer with 5+ years of experience building scalable, secure web applications using modern JavaScript technologies. Expert in Node.js, Express.js, MySQL, MongoDB, and RESTful API development.",
+        "profileImage": "./resource/profile/image.png",
         "bio": "I'm a passionate full-stack web developer with over 2 years of experience building robust web applications. My expertise lies in creating secure, scalable solutions using modern technologies. I specialize in Express.js, EJS templating, and implementing secure authentication systems with bcrypt. I believe in writing clean, maintainable code and following best practices for web development. When I'm not coding, I enjoy contributing to open-source projects, writing technical blogs, and exploring new technologies in the web development ecosystem.",
         "skills": [
             {
@@ -96,9 +122,7 @@ const portfolioData = {
             }
         ]
     },
-
-    // SKILLS DATA (Detailed)
-    skillsDetailed: [
+    "skillsDetailed": [
         {
             "icon": "fab fa-node-js",
             "title": "Backend Development",
@@ -120,16 +144,18 @@ const portfolioData = {
             "description": "Experience with Git version control, Docker basics, and deployment platforms like Render."
         }
     ],
-
-    // BLOG DATA
-    blog: [
+    "blog": [
         {
             "id": 1,
             "title": "Building Secure Authentication with Node.js",
             "excerpt": "Learn how to implement robust user authentication using bcrypt and sessions in your Express applications.",
             "date": "2024-03-15",
             "readTime": "5 min read",
-            "tags": ["Node.js", "Security", "Auth"],
+            "tags": [
+                "Node.js",
+                "Security",
+                "Auth"
+            ],
             "image": "./resource/blog/security-authentication-bcrypt.jpeg",
             "content": "<p>Security is paramount in modern web applications...</p>"
         },
@@ -139,7 +165,11 @@ const portfolioData = {
             "excerpt": "A comprehensive guide to using Embedded JavaScript templates for dynamic server-side rendering.",
             "date": "2024-03-10",
             "readTime": "4 min read",
-            "tags": ["EJS", "Frontend", "Express"],
+            "tags": [
+                "EJS",
+                "Frontend",
+                "Express"
+            ],
             "image": "./resource/blog/ejs-templating-guide.jpeg",
             "content": "<p>EJS is a simple templating language that lets you generate HTML markup with plain JavaScript...</p>"
         },
@@ -149,12 +179,13 @@ const portfolioData = {
             "excerpt": "Key principles for designing scalable and maintainable REST APIs with Node.js and Express.",
             "date": "2024-03-05",
             "readTime": "6 min read",
-            "tags": ["API", "Backend", "Best Practices"],
+            "tags": [
+                "API",
+                "Backend",
+                "Best Practices"
+            ],
             "image": "./resource/blog/restful-api-nodejs.jpeg",
             "content": "<p>Designing a RESTful API requires careful consideration...</p>"
         }
     ]
-};
-
-// Global accessor for pages to use
-window.portfolioData = portfolioData;
+}

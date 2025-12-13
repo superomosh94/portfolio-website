@@ -111,3 +111,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
+    if (typeof loadHomeContent === 'function') {
+        loadHomeContent();
+    }
+});
