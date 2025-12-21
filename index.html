@@ -255,27 +255,70 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="social-links">
-                <a href="https://github.com/superomosh94" target="_blank" rel="noopener noreferrer"
-                    aria-label="GitHub Profile">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://linkedin.com/in/martin-omondo" target="_blank" rel="noopener noreferrer"
-                    aria-label="LinkedIn Profile">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://twitter.com/martinomondo" target="_blank" rel="noopener noreferrer"
-                    aria-label="Twitter Profile">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="mailto:omondo94@gmail.com" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Martin Omondo</h3>
+                    <p class="footer-tagline">Building websites that help small businesses thrive online with trust,
+                        clarity, and beautiful design.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/superomosh94" target="_blank" rel="noopener noreferrer"
+                            aria-label="GitHub Profile">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/martin-omondo" target="_blank" rel="noopener noreferrer"
+                            aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/martinomondo" target="_blank" rel="noopener noreferrer"
+                            aria-label="Twitter Profile">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="mailto:omondo94@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="public/about.html">About</a></li>
+                        <li><a href="public/projects.html">Projects</a></li>
+                        <li><a href="public/services.html">Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="public/blog.html">Blog</a></li>
+                        <li><a href="public/contact.html">Contact</a></li>
+                        <li><a href="public/cv.html">Resume/CV</a></li>
+                        <li><a href="public/resource/resume/martin-resume.pdf" target="_blank">Download CV</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Get In Touch</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:omondo94@gmail.com">omondo94@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Available for Remote Work</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <p class="copyright">&copy; 2025 Martin Omondo. All Rights Reserved. <a href="public/admin/admin.html"
-                    aria-label="Admin Panel"
-                    style="text-decoration: none; color: inherit; opacity: 0.1; font-size: 1rem; margin-left: 10px;"><i
-                        class="fas fa-user-circle"></i></a></p>
+
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2025 Martin Omondo. All Rights Reserved.</p>
+                <p class="footer-credits">Crafted with <i class="fas fa-heart"></i> and <i class="fas fa-coffee"></i>
+                </p>
+            </div>
         </div>
     </footer>
 
@@ -283,24 +326,7 @@
     <script src="public/data/data.js"></script>
     <script src="public/main.js"></script>
     <script src="public/seo-schema.js"></script>
-    <script>
-        // Add admin link to navigation on mobile
-        document.addEventListener('DOMContentLoaded', () => {
-            // Check if admin link doesn't exist
-            if (!document.querySelector('[href="/admin"]')) {
-                const navLinks = document.getElementById('navLinks');
-                if (navLinks) {
-                    const adminLink = document.createElement('a');
-                    adminLink.href = 'public/admin/admin.html';
-                    adminLink.className = 'admin-link';
-                    adminLink.style.cssText = 'color: #999; font-size: 12px; text-decoration: none; opacity: 0.5;';
-                    adminLink.title = 'Admin Panel';
-                    adminLink.innerHTML = '<i class="fas fa-user-circle"></i>';
-                    navLinks.appendChild(adminLink);
-                }
-            }
-        });
-    </script>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             if (typeof injectStructuredData === 'function') {
@@ -308,7 +334,7 @@
             }
             loadHomeContent();
         });
-
+        j
         function loadHomeContent() {
             // Load Hero Content
             const heroName = document.getElementById('heroName');
