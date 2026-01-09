@@ -48,11 +48,10 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
 
-    <!-- GSAP with SRI -->
-    <!-- GSAP with SRI -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
+    <!-- GSAP with SRI (deferred to avoid blocking render) -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
 </head>
 
 <body>
@@ -277,9 +276,10 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-    <script src="seo-schema.js"></script>
+    <script defer src="data.js"></script>
+    <script defer src="main.js"></script>
+    <script defer src="seo-schema.js"></script>
+    <script defer src="perf-optimizations.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             if (typeof injectStructuredData === 'function') {

@@ -1,0 +1,96 @@
+<!-- 
+  OPTIMIZED IMAGE LOADING PATTERN
+  Copy these patterns into your HTML files
+-->
+
+<!-- Pattern 1: Simple Lazy Loading (Modern Browsers) -->
+<img 
+  src="./resource/image.webp" 
+  alt="Project description"
+  loading="lazy"
+  width="400"
+  height="300">
+
+<!-- Pattern 2: Responsive Images with Multiple Formats -->
+<picture>
+  <source srcset="./resource/image.webp" type="image/webp">
+  <img 
+    src="./resource/image.png" 
+    alt="Project description"
+    loading="lazy"
+    width="400"
+    height="300">
+</picture>
+
+<!-- Pattern 3: Responsive with Multiple Sizes (srcset) -->
+<picture>
+  <source 
+    srcset="./resource/image-sm.webp 480w, ./resource/image-md.webp 800w, ./resource/image.webp 1200w"
+    type="image/webp">
+  <img 
+    src="./resource/image.png" 
+    srcset="./resource/image-sm.png 480w, ./resource/image-md.png 800w, ./resource/image.png 1200w"
+    sizes="(max-width: 600px) 480px, (max-width: 1000px) 800px, 1200px"
+    alt="Project description"
+    loading="lazy"
+    width="400"
+    height="300">
+</picture>
+
+<!-- Pattern 4: Critical Images (Above the Fold) - Preload Instead of Lazy -->
+<img 
+  src="./resource/hero-background.webp" 
+  alt="Hero background"
+  loading="eager"
+  width="1920"
+  height="600">
+
+<!-- Pattern 5: Background Images with Modern Formats -->
+<style>
+  .hero {
+    background-image: url('./resource/hero-background.webp');
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                      url('./resource/hero-background.webp');
+    /* Fallback for older browsers */
+    background-image: url('./resource/hero-background.png');
+  }
+  
+  @supports (background-image: url("data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBIAAAAwAQCdASoBAAEAAUAcJaACdLoBAAA=")) {
+    .hero {
+      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('./resource/hero-background.webp');
+    }
+  }
+</style>
+
+<!--
+  RECOMMENDATIONS BY IMAGE TYPE:
+
+  1. Project/Portfolio Images (code-pattern.png, devoxxa.png, edulms.png)
+     → Use Pattern 3 (Responsive with srcset)
+     → Add loading="lazy"
+     → Compress to 50-70% of original size
+
+  2. Hero/Banner Images (hero-background.png)
+     → Use Pattern 1 or 2
+     → Preload in <head> with <link rel="preload">
+     → Consider background-image CSS instead
+
+  3. Profile/Avatar Images (workspace.png)
+     → Use Pattern 1 with loading="lazy"
+     → Compress to 200-300 KB
+
+  4. Blog Post Images
+     → Use Pattern 2 or 3
+     → Add loading="lazy"
+     → Set explicit width/height to prevent layout shift
+
+  COMPRESSION TARGETS:
+  - code-pattern.png: 1.0 MB → 300 KB (70% reduction)
+  - devoxxa.png: 1.2 MB → 320 KB (73% reduction)
+  - edulms.png: 0.6 MB → 180 KB (70% reduction)
+  - hero-background.png: 0.75 MB → 200 KB (73% reduction)
+  - workspace.png: 0.75 MB → 200 KB (73% reduction)
+
+  This will reduce total image payload from ~5.8MB to ~1.2MB!
+-->
