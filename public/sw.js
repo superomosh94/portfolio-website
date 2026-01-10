@@ -10,7 +10,7 @@ const urlsToCache = [
     '/contact.html',
     '/styles.css',
     '/main.js',
-    '/data/data.js',
+    '/data.js',
     '/favicon/favicon.ico',
 ];
 

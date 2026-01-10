@@ -545,6 +545,106 @@
                     "tags": ["API", "Backend", "Best Practices"],
                     "image": "./resource/blog/restful-api-nodejs.jpeg",
                     "content": "<p>Designing a RESTful API requires careful consideration to ensure it's easy to use, scalable, and maintainable.</p><h2>1. Use Nouns for Resources</h2><p>Use <code>/users</code> instead of <code>/getUsers</code>. The HTTP method (GET, POST, PUT, DELETE) should indicate the action.</p><h2>2. Use Standard HTTP Status Codes</h2><p>Return 200 for success, 201 for created, 400 for bad request, 401 for unauthorized, and 500 for server errors.</p>"
+                },
+                {
+                    "id": 4,
+                    "title": "Optimizing React Performance",
+                    "excerpt": "Deep dive into techniques for speeding up React apps: useMemo, useCallback, and virtualization.",
+                    "date": "2024-03-20",
+                    "readTime": "7 min read",
+                    "tags": ["React", "Performance", "Frontend"],
+                    "image": "./resource/blog/react-performance.jpeg",
+                    "content": "<p>React is fast by default, but complex applications can suffer from performance bottlenecks. In this article, we'll explore how to identify and fix common performance issues.</p><h2>1. Memoization with useMemo and useCallback</h2><p>Prevent expensive calculations and unnecessary re-renders.</p><pre><code class=\"javascript\">const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);</code></pre><h2>2. Virtualization</h2><p>Render only what is visible on the screen for long lists using libraries like <code>react-window</code>.</p>"
+                },
+                {
+                    "id": 5,
+                    "title": "Demystifying TypeScript Generics",
+                    "excerpt": "Learn how to build flexible and reusable code components using TypeScript Generics.",
+                    "date": "2024-03-25",
+                    "readTime": "6 min read",
+                    "tags": ["TypeScript", "Development", "Guide"],
+                    "image": "./resource/blog/typescript-generics.jpeg",
+                    "content": "<p>Generics allow you to create reusable components that work with a variety of types rather than a single one. This allows users to consume these components and use their own types.</p><h2>Basic Syntax</h2><p>Here is a simple identity function:</p><pre><code class=\"typescript\">function identity&lt;T&gt;(arg: T): T {\n  return arg;\n}</code></pre><p>This guarantees that the return type is the same as the argument type.</p>"
+                },
+                {
+                    "id": 6,
+                    "title": "Dockerizing Node.js Applications",
+                    "excerpt": "A step-by-step guide to containerizing your Node.js apps for consistent deployment environments.",
+                    "date": "2024-03-28",
+                    "readTime": "8 min read",
+                    "tags": ["Docker", "DevOps", "Node.js"],
+                    "image": "./resource/blog/docker-nodejs.jpeg",
+                    "content": "<p>Docker containers wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, and system libraries.</p><h2>The Dockerfile</h2><p>Create a <code>Dockerfile</code> in your project root:</p><pre><code class=\"dockerfile\">FROM node:18\nWORKDIR /usr/src/app\nCOPY package*.json ./\nRUN npm install\nCOPY . .\nEXPOSE 8080\nCMD [ \"node\", \"server.js\" ]</code></pre>"
+                },
+                {
+                    "id": 7,
+                    "title": "Introduction to GraphQL vs REST",
+                    "excerpt": "Compare the two dominant API architectural styles and decide which one fits your project.",
+                    "date": "2024-04-02",
+                    "readTime": "6 min read",
+                    "tags": ["GraphQL", "API", "REST"],
+                    "image": "./resource/blog/graphql-vs-rest.jpeg",
+                    "content": "<p>REST has been the standard for years, but GraphQL is gaining traction. Why?</p><h2>The Problem with REST</h2><p>Over-fetching and under-fetching data. With REST, you often get more data than you need, or have to make multiple requests.</p><h2>The GraphQL Solution</h2><p>With GraphQL, you ask for exactly what you need.</p><pre><code class=\"graphql\">query {\n  user(id: \"1\") {\n    name\n    posts {\n      title\n    }\n  }\n}</code></pre>"
+                },
+                {
+                    "id": 8,
+                    "title": "Modern CSS Layouts: Grid vs Flexbox",
+                    "excerpt": "Understand when to use CSS Grid and when to use Flexbox for building responsive layouts.",
+                    "date": "2024-04-05",
+                    "readTime": "5 min read",
+                    "tags": ["CSS", "Design", "Frontend"],
+                    "image": "./resource/blog/css-grid-flexbox.jpeg",
+                    "content": "<p>CSS Grid and Flexbox are complementary technologies, not competitors. Flexbox is for one-dimensional layouts (rows OR columns), while Grid is for two-dimensional layouts (rows AND columns).</p><h2>Flexbox</h2><p>Use Flexbox for alignment within a container.</p><h2>CSS Grid</h2><p>Use Grid for the overall page layout.</p><pre><code class=\"css\">.container {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 20px;\n}</code></pre>"
+                },
+                {
+                    "id": 4,
+                    "title": "Optimizing React Performance",
+                    "excerpt": "Deep dive into techniques for speeding up React apps: useMemo, useCallback, and virtualization.",
+                    "date": "2024-03-20",
+                    "readTime": "7 min read",
+                    "tags": ["React", "Performance", "Frontend"],
+                    "image": "./resource/blog/react-performance.jpeg",
+                    "content": "<p>React is fast by default, but complex applications can suffer from performance bottlenecks. In this article, we'll explore how to identify and fix common performance issues.</p><h2>1. Memoization with useMemo and useCallback</h2><p>Prevent expensive calculations and unnecessary re-renders.</p><pre><code class=\"javascript\">const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);</code></pre><h2>2. Virtualization</h2><p>Render only what is visible on the screen for long lists using libraries like <code>react-window</code>.</p>"
+                },
+                {
+                    "id": 5,
+                    "title": "Demystifying TypeScript Generics",
+                    "excerpt": "Learn how to build flexible and reusable code components using TypeScript Generics.",
+                    "date": "2024-03-25",
+                    "readTime": "6 min read",
+                    "tags": ["TypeScript", "Development", "Guide"],
+                    "image": "./resource/blog/typescript-generics.jpeg",
+                    "content": "<p>Generics allow you to create reusable components that work with a variety of types rather than a single one. This allows users to consume these components and use their own types.</p><h2>Basic Syntax</h2><p>Here is a simple identity function:</p><pre><code class=\"typescript\">function identity&lt;T&gt;(arg: T): T {\n  return arg;\n}</code></pre><p>This guarantees that the return type is the same as the argument type.</p>"
+                },
+                {
+                    "id": 6,
+                    "title": "Dockerizing Node.js Applications",
+                    "excerpt": "A step-by-step guide to containerizing your Node.js apps for consistent deployment environments.",
+                    "date": "2024-03-28",
+                    "readTime": "8 min read",
+                    "tags": ["Docker", "DevOps", "Node.js"],
+                    "image": "./resource/blog/docker-nodejs.jpeg",
+                    "content": "<p>Docker containers wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, and system libraries.</p><h2>The Dockerfile</h2><p>Create a <code>Dockerfile</code> in your project root:</p><pre><code class=\"dockerfile\">FROM node:18\nWORKDIR /usr/src/app\nCOPY package*.json ./\nRUN npm install\nCOPY . .\nEXPOSE 8080\nCMD [ \"node\", \"server.js\" ]</code></pre>"
+                },
+                {
+                    "id": 7,
+                    "title": "Introduction to GraphQL vs REST",
+                    "excerpt": "Compare the two dominant API architectural styles and decide which one fits your project.",
+                    "date": "2024-04-02",
+                    "readTime": "6 min read",
+                    "tags": ["GraphQL", "API", "REST"],
+                    "image": "./resource/blog/graphql-vs-rest.jpeg",
+                    "content": "<p>REST has been the standard for years, but GraphQL is gaining traction. Why?</p><h2>The Problem with REST</h2><p>Over-fetching and under-fetching data. With REST, you often get more data than you need, or have to make multiple requests.</p><h2>The GraphQL Solution</h2><p>With GraphQL, you ask for exactly what you need.</p><pre><code class=\"graphql\">query {\n  user(id: \"1\") {\n    name\n    posts {\n      title\n    }\n  }\n}</code></pre>"
+                },
+                {
+                    "id": 8,
+                    "title": "Modern CSS Layouts: Grid vs Flexbox",
+                    "excerpt": "Understand when to use CSS Grid and when to use Flexbox for building responsive layouts.",
+                    "date": "2024-04-05",
+                    "readTime": "5 min read",
+                    "tags": ["CSS", "Design", "Frontend"],
+                    "image": "./resource/blog/css-grid-flexbox.jpeg",
+                    "content": "<p>CSS Grid and Flexbox are complementary technologies, not competitors. Flexbox is for one-dimensional layouts (rows OR columns), while Grid is for two-dimensional layouts (rows AND columns).</p><h2>Flexbox</h2><p>Use Flexbox for alignment within a container.</p><h2>CSS Grid</h2><p>Use Grid for the overall page layout.</p><pre><code class=\"css\">.container {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 20px;\n}</code></pre>"
                 }
             ]
         };

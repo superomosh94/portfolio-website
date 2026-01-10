@@ -91,9 +91,12 @@
                         <i class="fas fa-hand-wave"></i>
                         Available for work
                     </div>
-                    <h1>Hi, I'm <span class="highlight" id="heroName">Loading...</span></h1>
-                    <h2 class="hero-subtitle" id="heroRole">Loading...</h2>
-                    <p id="heroDescription">Loading...</p>
+                    <h1>Hi, I'm <span class="highlight" id="heroName">Martin O</span></h1>
+                    <h2 class="hero-subtitle" id="heroRole">Full-Stack Developer specializing in Node.js, Express &
+                        Secure Web Applications</h2>
+                    <p id="heroDescription">Professional web developer with 5+ years of experience building scalable,
+                        secure web applications using modern JavaScript technologies. Expert in Node.js, Express.js,
+                        MySQL, MongoDB, and RESTful API development.</p>
                     <div class="hero-buttons">
                         <a href="contact.html" class="btn">
                             <i class="fas fa-envelope"></i>
@@ -110,7 +113,8 @@
                         <div class="blob blob-1"></div>
                         <div class="blob blob-2"></div>
                         <div class="profile-img" id="profileImage" role="img" aria-label="Profile Picture">
-                            <span id="profileInitials">MO</span>
+                            <img src="./resource/profile/image.png" alt="Martin O"
+                                onerror="this.parentElement.innerHTML='<span id=\'profileInitials\'>MO</span>'">
                         </div>
                     </div>
                 </div>
@@ -128,11 +132,17 @@
                         About Me
                     </div>
                     <h2 class="section-title">My Journey</h2>
-                    <p class="section-description" id="aboutBio">Loading...</p>
+                    <p class="section-description" id="aboutBio">I'm a passionate full-stack web developer with over 2
+                        years of experience building robust web applications. My expertise lies in creating secure,
+                        scalable solutions using modern technologies. I specialize in Express.js, EJS templating, and
+                        implementing secure authentication systems with bcrypt. I believe in writing clean, maintainable
+                        code and following best practices for web development. When I'm not coding, I enjoy contributing
+                        to open-source projects, writing technical blogs, and exploring new technologies in the web
+                        development ecosystem.</p>
                 </div>
                 <div class="about-content" id="aboutContent">
                     <div class="loading">
-                        <div class="spinner"></div>
+
                     </div>
                 </div>
             </div>
@@ -150,7 +160,26 @@
                 </div>
                 <div class="about-content" id="skillsContainer">
                     <div class="loading">
-                        <div class="spinner"></div>
+                        <div class="skill-item">
+                            <i class="fab fa-node-js"></i>
+                            <h4>Node.js & Express</h4>
+                            <p>Building scalable backend services and RESTful APIs</p>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <h4>Database Management</h4>
+                            <p>Designing schemas with MySQL and MongoDB</p>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js"></i>
+                            <h4>Modern JavaScript</h4>
+                            <p>ES6+, Async/Await, and modular coding patterns</p>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Web Security</h4>
+                            <p>Implementing authentication, authorization, and data encryption</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -174,12 +203,188 @@
                     <button class="filter-btn active" data-filter="all">All Projects</button>
                     <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
                     <button class="filter-btn" data-filter="frontend">Frontend</button>
-                    <button class="filter-btn" data-filter="backend">Backend</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="finance">Finance</button>
                 </div>
 
                 <div class="projects-grid" id="projectsGrid">
                     <div class="loading">
-                        <div class="spinner"></div>
+                        <!-- Project 1 -->
+                        <div class="project-card" data-category="finance">
+                            <div class="project-img">
+                                <a href="https://fin-mate-three.vercel.app" target="_blank" rel="noopener noreferrer">
+                                    <img src="./resource/projects/finmate.png" alt="FinMate"
+                                        onerror="this.src='https://via.placeholder.com/400x300?text=FinMate'">
+                                </a>
+                            </div>
+                            <div class="project-info">
+                                <h3>FinMate - Finance Management System</h3>
+                                <p>Full-stack finance tracking system with user authentication, transaction management,
+                                    and financial reporting.</p>
+                                <div class="project-tags">
+                                    <span class="tag">Express</span><span class="tag">EJS</span><span
+                                        class="tag">MySQL</span><span class="tag">bcrypt</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/superomosh94/FinMateV2" class="btn btn-secondary"
+                                        target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                                    <a href="https://fin-mate-three.vercel.app" class="btn" target="_blank"
+                                        rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="project-card" data-category="web">
+                            <div class="project-img">
+                                <a href="https://edulms-iota.vercel.app" target="_blank" rel="noopener noreferrer">
+                                    <img src="./resource/projects/edulms.png" alt="EduLMS"
+                                        onerror="this.src='https://via.placeholder.com/400x300?text=EduLMS'">
+                                </a>
+                            </div>
+                            <div class="project-info">
+                                <h3>EduLMS - Learning Management System</h3>
+                                <p>Collaborative learning platform with course management, user roles, and progress
+                                    tracking.</p>
+                                <div class="project-tags">
+                                    <span class="tag">Node.js</span><span class="tag">EJS</span><span
+                                        class="tag">MySQL</span><span class="tag">bcrypt</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/superomosh94/edu-lms" class="btn btn-secondary"
+                                        target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                                    <a href="https://edulms-iota.vercel.app" class="btn" target="_blank"
+                                        rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="project-card" data-category="web">
+                            <div class="project-img">
+                                <a href="https://devvoxa.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                    <img src="./resource/projects/devvoxa.png" alt="Devvoxa"
+                                        onerror="this.src='https://via.placeholder.com/400x300?text=Devvoxa'">
+                                </a>
+                            </div>
+                            <div class="project-info">
+                                <h3>Devvoxa</h3>
+                                <p>Professional web development brand website offering tailored single-page and
+                                    multi-page designs for businesses, with pricing in USD and KES.</p>
+                                <div class="project-tags">
+                                    <span class="tag">HTML</span><span class="tag">CSS</span><span
+                                        class="tag">JavaScript</span><span class="tag">Vercel</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/superomosh94/Devvoxa" class="btn btn-secondary"
+                                        target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                                    <a href="https://devvoxa.vercel.app/" class="btn" target="_blank"
+                                        rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 4 -->
+                        <div class="project-card" data-category="web">
+                            <div class="project-img">
+                                <a href="https://data-green-nine.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                    <img src="./resource/projects/starnet.png" alt="Star-Net Kenya"
+                                        onerror="this.src='https://via.placeholder.com/400x300?text=StarNet'">
+                                </a>
+                            </div>
+                            <div class="project-info">
+                                <h3>Star-Net Kenya</h3>
+                                <p>Static web app showcasing data, minutes, and SMS bundles with a responsive design and
+                                    simulated M-Pesa purchase flow.</p>
+                                <div class="project-tags">
+                                    <span class="tag">HTML</span><span class="tag">CSS</span><span
+                                        class="tag">JavaScript</span><span class="tag">Vercel</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/superomosh94/Data" class="btn btn-secondary"
+                                        target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                                    <a href="https://data-green-nine.vercel.app/" class="btn" target="_blank"
+                                        rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 5 -->
+                        <div class="project-card" data-category="frontend">
+                            <div class="project-img">
+                                <a href="https://lilbee.vercel.app" target="_blank" rel="noopener noreferrer">
+                                    <img src="./resource/projects/lilbee.png" alt="LilBee Logic"
+                                        onerror="this.src='https://via.placeholder.com/400x300?text=LilBee'">
+                                </a>
+                            </div>
+                            <div class="project-info">
+                                <h3>LilBee Logic - Puzzle Game Platform</h3>
+                                <p>Interactive logic puzzle game platform with bee-themed challenges, circuit puzzles,
+                                    and leaderboard system.</p>
+                                <div class="project-tags">
+                                    <span class="tag">HTML</span><span class="tag">CSS</span><span
+                                        class="tag">JavaScript</span><span class="tag">Vercel</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/superomosh94/LILBEE-LOGICS" class="btn btn-secondary"
+                                        target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                                    <a href="https://lilbee.vercel.app" class="btn" target="_blank"
+                                        rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 6 -->
+                        <div class="project-card" data-category="frontend">
+                            <div class="project-img">
+                                <a href="https://portfolio-drab-ten-82.vercel.app" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <img src="./resource/projects/portfolio.png" alt="Portfolio Website"
+                                        onerror="this.src='https://via.placeholder.com/400x300?text=Portfolio'">
+                                </a>
+                            </div>
+                            <div class="project-info">
+                                <h3>Portfolio Website - Developer Showcase</h3>
+                                <p>Professional portfolio website showcasing full-stack development projects with modern
+                                    design and responsive layout.</p>
+                                <div class="project-tags">
+                                    <span class="tag">HTML</span><span class="tag">CSS</span><span
+                                        class="tag">JavaScript</span><span class="tag">Vercel</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/superomosh94/portfolio-website"
+                                        class="btn btn-secondary" target="_blank" rel="noopener noreferrer"><i
+                                            class="fab fa-github"></i> Code</a>
+                                    <a href="https://portfolio-drab-ten-82.vercel.app" class="btn" target="_blank"
+                                        rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 7 -->
+                        <div class="project-card" data-category="fullstack">
+                            <div class="project-img">
+                                <a href="https://martino.vercel.app" target="_blank" rel="noopener noreferrer">
+                                    <img src="./resource/projects/martino.png" alt="Martino Portfolio"
+                                        onerror="this.src='https://via.placeholder.com/400x300?text=Martino'">
+                                </a>
+                            </div>
+                            <div class="project-info">
+                                <h3>Martino - React & Next.js Portfolio</h3>
+                                <p>Full-stack developer portfolio built with React and Next.js, featuring project
+                                    showcases and modern tech stack.</p>
+                                <div class="project-tags">
+                                    <span class="tag">React</span><span class="tag">Next.js</span><span
+                                        class="tag">JavaScript</span><span class="tag">Vercel</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/superomosh94/martino" class="btn btn-secondary"
+                                        target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                                    <a href="https://martino.vercel.app" class="btn" target="_blank"
+                                        rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -200,7 +405,31 @@
                 </div>
                 <div class="services-grid" id="servicesGrid">
                     <div class="loading">
-                        <div class="spinner"></div>
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fas fa-code"></i></div>
+                            <h3>Full-Stack Web Development</h3>
+                            <p>End-to-end web application development using modern technologies like Node.js, Express,
+                                and React. Building scalable, secure, and high-performance solutions tailored to your
+                                business needs.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fas fa-server"></i></div>
+                            <h3>Backend & API Architecture</h3>
+                            <p>Designing robust RESTful APIs and server-side logic. Expertise in database design (MySQL,
+                                MongoDB) and implementing secure authentication systems (JWT, OAuth).</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <h3>Responsive UI/UX Design</h3>
+                            <p>Creating engaging, mobile-first interfaces that provide seamless user experiences across
+                                all devices. Focusing on accessibility, performance, and modern design principles.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                            <h3>Technical Consulting & SEO</h3>
+                            <p>Providing technical guidance on software architecture, code quality, and performance
+                                optimization. Implementing SEO best practices to improve search engine visibility.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -276,130 +505,44 @@
     </footer>
 
     <!-- JavaScript -->
-    <script defer src="data.js"></script>
-    <script defer src="main.js"></script>
-    <script defer src="seo-schema.js"></script>
-    <script defer src="perf-optimizations.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            console.log('Page loaded');
+            setupProjectFilters();
+
             if (typeof injectStructuredData === 'function') {
                 injectStructuredData('home');
             }
         });
 
-        function loadHomeContent() {
-            // Load Hero Content
-            const heroName = document.getElementById('heroName');
-            const heroRole = document.getElementById('heroRole');
-            const heroDescription = document.getElementById('heroDescription');
-            const profileImage = document.getElementById('profileImage');
-            const profileInitials = document.getElementById('profileInitials');
+        function setupProjectFilters() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            if (filterButtons.length === 0) return;
 
-            if (window.portfolioData && window.portfolioData.about) {
-                const about = window.portfolioData.about;
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    // Update active button
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
 
-                // Set hero text content
-                if (heroName) heroName.textContent = about.name || 'Your Name';
-                if (heroRole) heroRole.textContent = about.role || 'Your Role';
-                if (heroDescription) heroDescription.textContent = about.heroDescription || 'Your description';
+                    const filter = this.dataset.filter;
+                    const projectCards = document.querySelectorAll('.project-card');
 
-                // Set profile image or initials
-                if (profileImage && about.profileImage && about.profileImage.trim() !== '') {
-                    // Clear existing content
-                    profileImage.innerHTML = '';
-                    // Create and add image element
-                    const img = document.createElement('img');
-                    img.src = about.profileImage;
-                    img.alt = about.name || 'Profile Picture';
-                    img.onerror = function () {
-                        // Fallback to initials if image fails to load
-                        profileImage.innerHTML = `<span id="profileInitials">${getInitials(about.name)}</span>`;
-                    };
-                    profileImage.appendChild(img);
-                } else if (profileInitials && about.name) {
-                    // Show initials
-                    profileInitials.textContent = getInitials(about.name);
-                }
-            }
-
-            // Helper function to get initials from name
-            function getInitials(name) {
-                if (!name) return 'UN';
-                const parts = name.trim().split(' ');
-                if (parts.length >= 2) {
-                    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
-                }
-                return name.substring(0, 2).toUpperCase();
-            }
-
-            // Load Projects
-            const projectsGrid = document.getElementById('projectsGrid');
-            if (projectsGrid) {
-                const projects = window.portfolioData.projects;
-                projectsGrid.innerHTML = projects.map(project => `
-                    <div class="project-card" data-category="${project.category}">
-                        <div class="project-img">
-                            <a href="${project.demo || '#'}" target="_blank">
-                                <img src="${project.image}" alt="${project.title} - ${project.description}" onerror="this.src='https://via.placeholder.com/400x300?text=Project+Image'">
-                            </a>
-                        </div>
-                        <div class="project-info">
-                            <h3>${project.title}</h3>
-                            <p>${project.description}</p>
-                            <div class="project-tags">
-                                ${project.tech.map(t => `<span class="tag">${t}</span>`).join('')}
-                            </div>
-                            <div class="project-links">
-                                ${project.github ? `<a href="${project.github}" class="btn btn-secondary" target="_blank"><i class="fab fa-github"></i> Code</a>` : ''}
-                                ${project.demo ? `<a href="${project.demo}" class="btn" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>` : ''}
-                            </div>
-                        </div>
-                    </div>
-                `).join('');
-            }
-
-            // Load Services
-            const servicesGrid = document.getElementById('servicesGrid');
-            if (servicesGrid) {
-                const services = window.portfolioData.services;
-                servicesGrid.innerHTML = services.map(service => `
-                    <div class="service-card">
-                        <div class="service-icon"><i class="${service.icon}"></i></div>
-                        <h3>${service.title}</h3>
-                        <p>${service.description}</p>
-                    </div>
-                `).join('');
-            }
-
-            // Load Skills
-            const skillsContainer = document.getElementById('skillsContainer');
-            if (skillsContainer) {
-                const skills = window.portfolioData.skillsDetailed;
-                skillsContainer.innerHTML = skills.map(skill => `
-                    <div class="skill-item">
-                        <i class="${skill.icon}"></i>
-                        <h4>${skill.title}</h4>
-                        <p>${skill.description}</p>
-                    </div>
-                `).join('');
-            }
-        }
-
-        // Filter Logic for Index Page
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const filter = btn.dataset.filter;
-                document.querySelectorAll('.project-card').forEach(project => {
-                    if (filter === 'all' || project.dataset.category === filter) {
-                        project.style.display = 'block';
-                    } else {
-                        project.style.display = 'none';
-                    }
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.style.display = 'block';
+                            // Add fade in effect
+                            card.style.opacity = '0';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                            }, 50);
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
                 });
             });
-        });
+        }
     </script>
 </body>
 
