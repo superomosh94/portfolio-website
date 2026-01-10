@@ -1,11 +1,12 @@
-{
+﻿// Info: Generated Static Data
+window.portfolioData = {
     "projects": [
         {
             "id": 1,
             "title": "FinMate - Finance Management System",
             "category": "finance",
             "description": "Full-stack finance tracking system with user authentication, transaction management, and financial reporting.",
-            "image": "./resource/image.png",
+            "image": "./resource/projects/finmate.png",
             "tech": [
                 "Express",
                 "EJS",
@@ -13,14 +14,14 @@
                 "bcrypt"
             ],
             "github": "https://github.com/superomosh94/FinMateV2",
-            "demo": "https://finmatev2.onrender.com"
+            "demo": "https://fin-mate-three.vercel.app"
         },
         {
             "id": 2,
             "title": "EduLMS - Learning Management System",
             "category": "web",
             "description": "Collaborative learning platform with course management, user roles, and progress tracking.",
-            "image": "./resource/edulms.png",
+            "image": "./resource/projects/edulms.png",
             "tech": [
                 "Node.js",
                 "EJS",
@@ -28,14 +29,14 @@
                 "bcrypt"
             ],
             "github": "https://github.com/superomosh94/edu-lms",
-            "demo": "https://edu-lms-zeqh.onrender.com"
+            "demo": "https://edulms-iota.vercel.app"
         },
         {
             "id": 3,
             "title": "Devvoxa",
             "category": "web",
             "description": "Professional web development brand website offering tailored single-page and multi-page designs for businesses, with pricing in USD and KES.",
-            "image": "./resource/devoxxa.png",
+            "image": "./resource/projects/devvoxa.png",
             "tech": [
                 "HTML",
                 "CSS",
@@ -50,7 +51,7 @@
             "title": "Star-Net Kenya",
             "category": "web",
             "description": "Static web app showcasing data, minutes, and SMS bundles with a responsive design and simulated M-Pesa purchase flow.",
-            "image": "./resource/starnet.png",
+            "image": "./resource/projects/starnet.png",
             "tech": [
                 "HTML",
                 "CSS",
@@ -61,15 +62,51 @@
             "demo": "https://data-green-nine.vercel.app/"
         },
         {
-            "title": "",
-            "category": "",
-            "description": "",
-            "image": "",
-            "tech": [],
-            "github": "",
-            "demo": "",
-            "id": 1765608888484
-        }
+            "id": 5,
+            "title": "LilBee Logic - Puzzle Game Platform",
+            "category": "frontend",
+            "description": "Interactive logic puzzle game platform with bee-themed challenges, circuit puzzles, and leaderboard system.",
+            "image": "./resource/projects/lilbee.png",
+            "tech": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Vercel"
+            ],
+            "github": "https://github.com/superomosh94/LILBEE-LOGICS",
+            "demo": "https://lilbee.vercel.app"
+        },
+        {
+            "id": 6,
+            "title": "Portfolio Website - Developer Showcase",
+            "category": "frontend",
+            "description": "Professional portfolio website showcasing full-stack development projects with modern design and responsive layout.",
+            "image": "./resource/projects/portfolio.png",
+            "tech": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Vercel"
+            ],
+            "github": "https://github.com/superomosh94/portfolio-website",
+            "demo": "https://portfolio-drab-ten-82.vercel.app"
+        },
+        {
+            "id": 7,
+            "title": "Martino - React & Next.js Portfolio",
+            "category": "fullstack",
+            "description": "Full-stack developer portfolio built with React and Next.js, featuring project showcases and modern tech stack.",
+            "image": "./resource/projects/martino.png",
+            "tech": [
+                "React",
+                "Next.js",
+                "JavaScript",
+                "Vercel"
+            ],
+            "github": "https://github.com/superomosh94/martino",
+            "demo": "https://martino.vercel.app"
+        },
+
     ],
     "services": [
         {
@@ -188,4 +225,4 @@
             "content": "<p>Designing a RESTful API requires careful consideration...</p>"
         }
     ]
-}
+};

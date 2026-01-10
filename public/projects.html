@@ -30,58 +30,11 @@
         crossorigin="anonymous">
 
     <script src="seo-schema.js"></script>
+    <script src="data/data.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if (typeof injectStructuredData === 'function') {
-                injectStructuredData('projects');
-            }
-        });
-
-        // 1. INLINED DATA
-        window.portfolioData = {
-            projects: [
-                {
-                    "id": 1,
-                    "title": "FinMate - Finance Management System",
-                    "category": "finance",
-                    "description": "Full-stack finance tracking system with user authentication, transaction management, and financial reporting.",
-                    "image": "./resource/image.png",
-                    "tech": ["Express", "EJS", "MySQL", "bcrypt"],
-                    "github": "https://github.com/superomosh94/FinMateV2",
-                    "demo": "https://finmatev2.onrender.com"
-                },
-                {
-                    "id": 2,
-                    "title": "EduLMS - Learning Management System",
-                    "category": "web",
-                    "description": "Collaborative learning platform with course management, user roles, and progress tracking.",
-                    "image": "./resource/edulms.png",
-                    "tech": ["Node.js", "EJS", "MySQL", "bcrypt"],
-                    "github": "https://github.com/superomosh94/edu-lms",
-                    "demo": "https://edu-lms-zeqh.onrender.com"
-                },
-                {
-                    "id": 3,
-                    "title": "Devvoxa",
-                    "category": "web",
-                    "description": "Professional web development brand website offering tailored single-page and multi-page designs for businesses, with pricing in USD and KES.",
-                    "image": "./resource/devoxxa.png",
-                    "tech": ["HTML", "CSS", "JavaScript", "Vercel"],
-                    "github": "https://github.com/superomosh94/Devvoxa",
-                    "demo": "https://devvoxa.vercel.app/"
-                },
-                {
-                    "id": 4,
-                    "title": "Star-Net Kenya",
-                    "category": "web",
-                    "description": "Static web app showcasing data, minutes, and SMS bundles with a responsive design and simulated M-Pesa purchase flow.",
-                    "image": "./resource/starnet.png",
-                    "tech": ["HTML", "CSS", "JavaScript", "Vercel"],
-                    "github": "https://github.com/superomosh94/Data",
-                    "demo": "https://data-green-nine.vercel.app/"
-                }
-            ]
-        };
+        if (typeof injectStructuredData === 'function') {
+            injectStructuredData('projects');
+        }
 
         // 2. INLINED LOGIC
         const themeToggle = document.getElementById('themeToggle');
@@ -132,7 +85,9 @@
                     dbgElem.innerHTML = data.map(project => `
                         <div class="project-card" data-category="${project.category}">
                             <div class="project-img">
-                                <img src="${project.image}" alt="${project.title} - ${project.description}" onerror="this.src='https://via.placeholder.com/400x300?text=Project+Image'">
+                                <a href="${project.demo || '#'}" target="_blank">
+                                    <img src="${project.image}" alt="${project.title} - ${project.description}" onerror="this.src='https://via.placeholder.com/400x300?text=Project+Image'">
+                                </a>
                             </div>
                             <div class="project-info">
                                 <h3>${project.title}</h3>

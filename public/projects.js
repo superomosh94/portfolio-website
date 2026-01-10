@@ -63,7 +63,9 @@ function loadProjects() {
         document.getElementById('projectsGrid').innerHTML = data.map(project => `
             <div class="project-card" data-category="${project.category}">
                 <div class="project-img">
-                    <img src="${project.image}" alt="${project.title} - ${project.description}" onerror="this.src='https://via.placeholder.com/400x300?text=Project+Image'">
+                    <a href="${project.demo || '#'}" target="_blank">
+                        <img src="${project.image}" alt="${project.title} - ${project.description}" onerror="this.src='https://via.placeholder.com/400x300?text=Project+Image'">
+                    </a>
                 </div>
                 <div class="project-info">
                     <h3>${project.title}</h3>
