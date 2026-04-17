@@ -231,7 +231,7 @@ window.portfolioData = {
             "date": "2024-03-20",
             "readTime": "7 min read",
             "tags": ["React", "Performance", "Frontend"],
-            "image": "./resource/blog/react-performance.jpeg",
+            "image": "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=2070&auto=format&fit=crop",
             "content": "<p>React is fast by default, but complex applications can suffer from performance bottlenecks. In this article, we'll explore how to identify and fix common performance issues.</p><h2>1. Memoization with useMemo and useCallback</h2><p>Prevent expensive calculations and unnecessary re-renders.</p><pre><code class=\"javascript\">const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);</code></pre><h2>2. Virtualization</h2><p>Render only what is visible on the screen for long lists using libraries like <code>react-window</code>.</p>"
         },
         {
@@ -241,7 +241,7 @@ window.portfolioData = {
             "date": "2024-03-25",
             "readTime": "6 min read",
             "tags": ["TypeScript", "Development", "Guide"],
-            "image": "./resource/blog/typescript-generics.jpeg",
+            "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop",
             "content": "<p>Generics allow you to create reusable components that work with a variety of types rather than a single one. This allows users to consume these components and use their own types.</p><h2>Basic Syntax</h2><p>Here is a simple identity function:</p><pre><code class=\"typescript\">function identity&lt;T&gt;(arg: T): T {\n  return arg;\n}</code></pre><p>This guarantees that the return type is the same as the argument type.</p>"
         },
         {
@@ -251,7 +251,7 @@ window.portfolioData = {
             "date": "2024-03-28",
             "readTime": "8 min read",
             "tags": ["Docker", "DevOps", "Node.js"],
-            "image": "./resource/blog/docker-nodejs.jpeg",
+            "image": "https://images.unsplash.com/photo-1605745341117-95852a706686?q=80&w=2070&auto=format&fit=crop",
             "content": "<p>Docker containers wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, and system libraries.</p><h2>The Dockerfile</h2><p>Create a <code>Dockerfile</code> in your project root:</p><pre><code class=\"dockerfile\">FROM node:18\nWORKDIR /usr/src/app\nCOPY package*.json ./\nRUN npm install\nCOPY . .\nEXPOSE 8080\nCMD [ \"node\", \"server.js\" ]</code></pre>"
         },
         {
@@ -261,7 +261,7 @@ window.portfolioData = {
             "date": "2024-04-02",
             "readTime": "6 min read",
             "tags": ["GraphQL", "API", "REST"],
-            "image": "./resource/blog/graphql-vs-rest.jpeg",
+            "image": "https://images.unsplash.com/photo-1558494949-efdeb6bf80c1?q=80&w=2069&auto=format&fit=crop",
             "content": "<p>REST has been the standard for years, but GraphQL is gaining traction. Why?</p><h2>The Problem with REST</h2><p>Over-fetching and under-fetching data. With REST, you often get more data than you need, or have to make multiple requests.</p><h2>The GraphQL Solution</h2><p>With GraphQL, you ask for exactly what you need.</p><pre><code class=\"graphql\">query {\n  user(id: \"1\") {\n    name\n    posts {\n      title\n    }\n  }\n}</code></pre>"
         },
         {
@@ -271,7 +271,7 @@ window.portfolioData = {
             "date": "2024-04-05",
             "readTime": "5 min read",
             "tags": ["CSS", "Design", "Frontend"],
-            "image": "./resource/blog/css-grid-flexbox.jpeg",
+            "image": "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?q=80&w=2070&auto=format&fit=crop",
             "content": "<p>CSS Grid and Flexbox are complementary technologies, not competitors. Flexbox is for one-dimensional layouts (rows OR columns), while Grid is for two-dimensional layouts (rows AND columns).</p><h2>Flexbox</h2><p>Use Flexbox for alignment within a container.</p><h2>CSS Grid</h2><p>Use Grid for the overall page layout.</p><pre><code class=\"css\">.container {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 20px;\n}</code></pre>"
         }
     ]
